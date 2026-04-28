@@ -1,0 +1,437 @@
+@media (max-width: 1470px) {
+  .container {
+    width: 96%;
+  }
+  .btn1 {
+    margin-top: 18px;
+  }
+  .btn1 a {
+    font-size: 16px;
+  }
+  .food span,
+  .food2 span,
+  .food3 span {
+    font-size: 20px;
+  }
+  .num2 img {
+    width: 15%;
+    padding-bottom: 8px;
+  }
+  .num3 img {
+    width: 20%;
+    padding-bottom: 8px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .food {
+    padding-left: 5%;
+  }
+  .food h1,
+  .food2 h1,
+  .food3 h1 {
+    padding-bottom: 10px;
+  }
+  .food span,
+  .food2 span,
+  .food3 span {
+    font-size: 17px;
+  }
+  .btn1 {
+    padding: 8px 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  .no2 {
+    bottom: 22px;
+  }
+  .recipe_desc1 h1,
+  .recpie_type3 h1 {
+    font-size: 26px;
+  }
+  .recpie_type2 h1 {
+    font-size: 24px;
+  }
+  .recpie_desc span {
+    font-size: 20px;
+  }
+  .recpie_type2 span {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 960px) {
+  #recipe .container {
+    background: none;
+  }
+  #recipe .container > h1 {
+    font-size: 20px;
+  }
+  .top1 {
+    justify-content: space-around;
+  }
+  .top2 {
+    padding: 0 0 0 12px;
+  }
+  .num2 img,
+  .num3 img {
+    padding-bottom: 8px;
+  }
+
+  .img_box .img1 {
+    padding-left: 30%;
+  }
+  span.food_txt {
+    display: none;
+  }
+  .food {
+    padding-top: 8%;
+    padding-left: 2%;
+  }
+  .food h1,
+  .food2 h1,
+  .food3 h1 {
+    font-size: 32px;
+    padding-bottom: 8px;
+  }
+  .food span,
+  .food2 span,
+  .food3 span {
+    font-size: 17px;
+  }
+  .btn1 {
+    display: none;
+  }
+  .btn2 {
+    display: block;
+  }
+  .recipe_desc1 h1,
+  .recpie_type3 h1 {
+    font-size: 20px;
+  }
+  .recpie_type2 h1 {
+    font-size: 20px;
+  }
+  .recpie_desc span {
+    font-size: 14px;
+  }
+  .recpie_type2 span {
+    font-size: 14px;
+  }
+  .recipe_desc2 {
+    top: 10%;
+  }
+  .recipe_desc2 span:last-child {
+    display: none;
+  }
+  .recipe_desc3 span:last-child {
+    display: none;
+  }
+  .graph .vote_num1,
+  .graph .vote_num2 {
+    font-size: 30px;
+  }
+  .graph span {
+    font-size: 20px;
+  }
+  .graph p {
+    font-size: 20px;
+  }
+  .vote_type span {
+    font-size: 2.7083vw;
+  }
+  .vote_type h1 {
+    font-size: 6.0417vw;
+  }
+  .vote2_title {
+    padding-right: 0;
+  }
+  .vote2_inner .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 50px;
+  }
+  .vote2_title::after {
+    display: none;
+  }
+  .vote2_title {
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  .vote2_title h1 {
+    font-size: 30px;
+    padding-bottom: 20px;
+  }
+  .vote2_title span {
+    font-size: 20px;
+  }
+  .type_box2 {
+    width: 60.7292vw;
+    height: 45px;
+  }
+  .type_box4 {
+    width: 60.7292vw;
+    height: 100px;
+  }
+}
+@media (max-width: 630px) {
+  .food h1,
+  .food2 h1,
+  .food3 h1 {
+    font-size: 25px;
+    padding-bottom: 8px;
+  }
+  .food span,
+  .food2 span,
+  .food3 span {
+    font-size: 14px;
+    word-break: keep-all;
+  }
+  .right h1 {
+    font-size: 18px;
+  }
+  .right_recpie {
+    margin-bottom: 12px;
+  }
+  .btn2 {
+    font-size: 14px;
+    padding: 2px;
+  }
+  .graph .vote_num1,
+  .graph .vote_num2 {
+    font-size: 24px;
+  }
+  .graph span {
+    font-size: 16px;
+  }
+  .graph p {
+    font-size: 16px;
+    left: 46%;
+  }
+}
+@media (max-width: 480px) {
+  #top3 {
+    margin-top: 60px;
+  }
+  #top3_main {
+    padding-top: 20px;
+  }
+  #top3 .container {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+  }
+  .top3_bg img:first-child {
+    display: none;
+  }
+  .top3_bg img:last-child {
+    display: block;
+  }
+  .top1,
+  .top3 {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 10px 0;
+    margin-top: 0;
+  }
+  .top2 {
+    flex-direction: column-reverse;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 10px 0;
+  }
+  .no1,
+  .no2,
+  .no3 {
+    padding: 0;
+  }
+
+  .food h1,
+  .food2 h1,
+  .food3 h1 {
+    display: inline;
+    font-size: 18px;
+  }
+
+  .food {
+    padding-left: 0;
+    padding-top: 2%;
+    margin-left: 12px;
+    flex: 1;
+    text-align: center;
+  }
+  .food2 {
+    padding-top: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+  .food3 {
+    margin-top: 3%;
+    text-align: center;
+  }
+  .food span,
+  .food2 span,
+  .food3 span {
+    margin-top: 3%;
+    line-height: 1.2;
+  }
+  .img_box {
+    flex: 1;
+  }
+  .img_box .img1 {
+    width: 55%;
+    padding-left: 23%;
+  }
+  .no1 {
+    padding-left: 18%;
+    width: 65%;
+  }
+  .no2 {
+    width: 45%;
+    left: 1%;
+    bottom: 0;
+  }
+  .no3 {
+    width: 35%;
+  }
+  .num img {
+    width: 20%;
+    padding-bottom: 4px;
+  }
+  .num2 img,
+  .num3 img {
+    padding-bottom: 4px;
+  }
+  .top3 {
+    padding-top: 10px;
+  }
+  .btn2 {
+    margin-left: 43%;
+  }
+  /* recipe */
+  .main_note {
+    display: none;
+  }
+  #recipe .container > h1 {
+    font-size: 16px;
+    top: -1%;
+    left: 30%;
+  }
+  .right_recpie {
+    width: 95%;
+  }
+  .recpie_desc {
+    width: 80%;
+    top: 10%;
+  }
+  .left {
+    display: none;
+  }
+  .right {
+    width: 100%;
+    margin-top: 35%;
+    position: static;
+  }
+  .note {
+    display: block;
+  }
+  .postit {
+    display: none;
+  }
+  .m_img {
+    display: block;
+  }
+  .recpie_desc h1 {
+    padding-top: 2%;
+  }
+  .recipe_desc2 {
+    top: 5%;
+  }
+  .vote_img {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .vote_type span {
+    font-size: 16px;
+  }
+  .vote_type h1 {
+    font-size: 30px;
+  }
+  .graph .vote_num1,
+  .graph .vote_num2 {
+    font-size: 20px;
+  }
+  .graph span {
+    font-size: 14px;
+  }
+  .graph p {
+    font-size: 14px;
+    font-weight: normal;
+    left: 46%;
+  }
+  .vote2_inner .container {
+    padding-bottom: 30px;
+  }
+  .vote2_title h1 {
+    font-size: 24px;
+    padding-top: 28px;
+    padding-bottom: 22px;
+  }
+  .vote2_title span {
+    font-size: 16px;
+  }
+  .vote2_title p {
+    width: 267px;
+    font-size: 14px;
+    word-break: keep-all;
+  }
+  .type_box1,
+  .type_box3 {
+    display: none;
+  }
+  .type_box2 {
+    margin-bottom: 16px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .type_box4 {
+    height: 74px;
+    font-size: 12px;
+  }
+  .type_box5 {
+    margin-left: 30%;
+  }
+}
+@media (max-width: 384px) {
+  .no1 {
+    padding-left: 15%;
+    width: 74%;
+  }
+  .food span,
+  .food2 span,
+  .food3 span {
+    display: none;
+  }
+  .top1,
+  .top2 {
+    padding: 0 0 15px 0;
+  }
+  .top3 {
+    padding: 5px 0 0 0;
+  }
+  #recipe .container > h1 {
+    left: 24%;
+  }
+
+  .graph p {
+    font-size: 14px;
+    left: 44%;
+  }
+}

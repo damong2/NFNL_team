@@ -1,0 +1,168 @@
+/********** main vedio **********/
+
+/********** warining line **********/
+.rolling-1 {
+  transform: translate(-50%, -50%) rotate(1deg);
+  z-index: 10;
+}
+.rolling-2 {
+  transform: translate(-50%, -50%) rotate(-3.5deg);
+}
+.txtRolling {
+  overflow: hidden;
+  position: absolute;
+  top: 1150px;
+  left: 50%;
+  width: 100%; /* 화면보다 넉넉하게 */
+  transform-origin: center;
+}
+.wrap-box {
+  display: flex;
+  width: max-content;
+}
+.rolling-1 .wrap-box {
+  animation: rolling-left 30s linear infinite;
+  background: #101010;
+}
+.rolling-2 .wrap-box {
+  animation: rolling-right 32s linear infinite;
+  background: #101010;
+}
+.rolling-list {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  /* mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); */
+}
+.rolling-list::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  /* background: radial-gradient(circle, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.4) 100%); */
+  pointer-events: none;
+}
+.list {
+  flex: 0 0 auto;
+}
+/* rolling-1 왼쪽으로 흐르는 애니메이션 */
+@keyframes rolling-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* rolling-2 오른쪽으로 흐르는 애니메이션 */
+@keyframes rolling-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/********** 이달의 메뉴 TOP3, 투표 배너 **********/
+#main {
+  width: 100%;
+  height: 1080px;
+  background-color: gray;
+  position: relative;
+  z-index: -1000;
+}
+/* ------ */
+#main img {
+  width: 100%;
+  position: absolute;
+  top: 950px;
+}
+.section1 {
+  margin-top: 333px;
+  text-align: center;
+}
+h1 {
+  font-size: 50px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 20px;
+}
+p {
+  font-weight: 400;
+  font-size: 28px;
+  color: #fff;
+}
+.img_box {
+  margin-top: 97px;
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.arrow1 {
+  width: 5%;
+  position: absolute;
+  top: 313px;
+  left: 648px;
+}
+.arrow2 {
+  width: 5%;
+  position: absolute;
+  top: 313px;
+  right: 0px;
+}
+.arrow1:hover {
+  filter: contrast(0.6);
+}
+.arrow2:hover {
+  filter: contrast(0.6);
+}
+/********** X-FOOD 이벤트 **********/
+.section2 {
+  width: 100%;
+  margin-top: 333px;
+  text-align: center;
+}
+.section2 img {
+  margin-top: 33px;
+}
+
+.section3 {
+  margin-top: 333px;
+  margin-bottom: 175px;
+}
+
+/********** 전광판 **********/
+/* 전광판 */
+.billboard {
+  position: relative;
+  width: 100%;
+}
+.section3 .swiper-slide {
+  position: relative;
+}
+
+.section3 .swiper-slide img {
+  width: 100%;
+  display: block;
+}
+
+/* iframe을 전광판 안쪽 위치에 딱 맞게 */
+.billboard .swiper {
+  position: absolute;
+  top: 46%;
+  left: 54%;
+  width: 44%; /* 전광판 화면 크기에 맞게 조절 */
+  height: 55%;
+  transform: translate(-50%, -50%);
+  border: none;
+  z-index: 2;
+}
+
+.billboard iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

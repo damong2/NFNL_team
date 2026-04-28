@@ -1,0 +1,358 @@
+/* 탭 숨기기 */
+input[type="radio"] {
+  display: none;
+}
+
+/* 탭 버튼 */
+input[type="radio"] + label {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0 33px;
+  background: #ccc;
+  color: #000;
+  font-size: 20px;
+  border-radius: 0 0 100px 100px;
+  transition: 0.3s;
+  width: 87px;
+}
+
+/* 클릭시 활성화 탭 */
+input[type="radio"]:checked + label {
+  background: #ff0000;
+  color: #fff;
+}
+
+/* 탭 영역 */
+.tab_content {
+  width: 100%;
+  text-align: center;
+  margin-top: 180px;
+}
+
+/* 컨텐츠 박스 기본 */
+.conbox {
+  width: 100%;
+  background: #000;
+  margin: 0 auto;
+  display: none;
+  padding-top: 80px;
+  margin-top: 116px; /*탭이랑 컨테이너 사이 간격 @@@@@ 조정해야함*/
+}
+/* 우용님 파트 */
+.con1 {
+  width: 1196px;
+  /* max-width: 1196px; */
+  background: #101010;
+  margin: 0 auto;
+  display: none;
+  /* padding-top: 80px; */
+  margin-top: 116px; /*탭이랑 컨테이너 사이 간격 @@@@@ 조정해야함*/
+}
+/* // */
+
+/* X파일 */
+.con2 {
+  display: none;
+}
+
+/* 칼럼 이미지 그리드 */
+.con2 .image {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+/* 칼럼 이미지 스타일 */
+.con2 .image img {
+  width: auto;
+  display: block;
+}
+.con2 .image a:hover img {
+  filter: blur(3px);
+}
+
+/* 칼럼 하단 버튼 */
+.con2 .btnNum {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 82px 0 83px 0;
+}
+/* 버튼 크기 */
+.con2 .btnNum img {
+  width: 26px;
+  cursor: pointer;
+}
+/* 우용님 파트 */
+.con1 {
+  width: 1196px;
+  /* max-width: 1196px; */
+  background: #101010;
+  margin: 0 auto;
+  display: none;
+  /* padding-top: 80px; */
+  margin-top: 116px; /*탭이랑 컨테이너 사이 간격 @@@@@ 조정해야함*/
+}
+/* // */
+
+/* 탭 선택 시 보여주기 */
+input[id="tab01"]:checked ~ .con1 {
+  display: block;
+}
+input[id="tab02"]:checked ~ .con2 {
+  display: block;
+}
+input[id="tab03"]:checked ~ .con3 {
+  display: block;
+}
+
+/* 우용님 파트 */
+/* 영상 리뷰 */
+/* 영상 리뷰 탑 */
+.rivew_top {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  margin: 0 auto;
+  /* align-items: flex-start; */
+  background: linear-gradient(to right, #8d0002 50%, #262626 50%);
+  padding: 185px 0;
+  /* margin-top: 116px; */
+}
+.top_title {
+  position: sticky;
+  top: 15%;
+  align-self: flex-start;
+}
+
+.top_title .title {
+  font-size: 60px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.8px;
+  text-align: left;
+  line-height: 120%;
+  margin-left: 80px;
+}
+.top_title .text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: -0.8px;
+  line-height: 1.5;
+  margin-top: 40px;
+  word-break: keep-all;
+  text-align: left;
+  margin-left: 80px;
+}
+.top_contents_box {
+  margin-right: 80px;
+}
+
+.top_contents_box ul {
+  display: block;
+  border-top: 2px solid #fff;
+}
+.top_contents_box ul li {
+  padding: 42px 0;
+  border-bottom: 2px solid #fff;
+  position: relative;
+}
+.top_contents_box ul li span {
+  align-items: center;
+  gap: 17px;
+}
+.top_right_text {
+  width: 100%;
+  text-align: left;
+  margin-left: 24px;
+}
+.top_right_text .sub_title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.8px;
+}
+.top_contents_box ul li span .top_right_text .sub_text {
+  margin: 17px 0;
+}
+.top_right_text .sub_text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: -0.8px;
+  line-height: 1.3;
+  margin-top: 40px;
+  word-break: keep-all;
+}
+.top_right_img img {
+  width: 91%;
+}
+
+/* 영상 리뷰 바텀 */
+.rivew_bottom {
+  position: relative;
+  margin-top: 0;
+}
+.bottom_wrap {
+  /* position: relative; */
+  width: 100%;
+  /* width: 1440px; */
+  /* height: 1266px; */
+  /* margin: 0 auto; */
+  padding-bottom: 234px;
+
+  overflow: hidden;
+}
+
+.bottom_bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.bottom_bg img {
+  /* width: 100%; */
+  height: 100%;
+  /* object-fit: cover; */
+}
+.bottom_content {
+  position: relative;
+  z-index: 2;
+
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.bottom_title {
+  font-size: 70px;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 185px;
+}
+
+.bottom_sub {
+  margin-top: 28px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.reviewSwiper {
+  position: relative;
+  width: 100%;
+  margin: 139px auto 0;
+}
+.swiper-wrapper {
+  gap: 30px;
+}
+/* // */
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+미디어쿼리 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (max-width: 1455px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1395px) {
+  /* 칼럼이미지 사이값 조절 */
+  .con2 .image {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1052px) {
+  /* 칼럼이미지 크기 조절 */
+  .con2 .image img {
+    height: 252px;
+  }
+}
+
+@media (max-width: 788px) {
+  /* 탭 상단 부분 크기 조절 */
+  .tab_content {
+    margin-top: 68px;
+  }
+
+  /* 탭 하단 부분 크기 조절 */
+  .conbox {
+    margin-top: 41px;
+    padding-top: 52px; /*컨테이너랑 책 사이 여백*/
+  }
+
+  /* 탭 */
+  input[type="radio"] + label {
+    margin: 0 21.5px;
+    padding: 10px 7px;
+    width: 87px;
+    font-size: 15px;
+  }
+
+  /* 책 사이즈 */
+  .con2 .image img {
+    height: 187px;
+  }
+
+  /* 칼럼이랑 버튼 사이 여백 */
+  .con2 .btnNum {
+    padding: 56px 0;
+  }
+}
+
+@media (max-width: 467px) {
+  .con2 .image img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 456px) {
+  input[type="radio"] + label {
+    margin: 0 20px 0 0;
+  }
+  /* 영상리뷰 우측에만 마진 값 없애기~ */
+  input[id="tab03"] + label {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 440px) {
+  .conbox {
+    padding-top: 30px;
+  }
+  .con2 .image {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .con2 .image img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 372px) {
+  input[type="radio"] + label {
+    margin: 5px;
+    width: 80px;
+  }
+
+  .con2 .image img {
+    height: 140px;
+  }
+}
+
+@media (max-width: 336px) {
+  input[type="radio"] + label {
+    margin: 5px;
+    width: 70px;
+    font-size: 13px;
+  }
+  .con2 .image img {
+    height: 130px;
+  }
+}

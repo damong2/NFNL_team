@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFNL</title>
+    <!-- seo -->
+    <!-- 저자 -->
+    <!-- 사이트 소개 -->
+    <!-- 사이트 설명 -->
+    <!-- 서치 키워드 -->
+    <meta name="author" content="WebProject" />
+    <meta name="description" content="GourmetKillerGuide" />
+    <meta
+      name="keywords"
+      content="web, webproject, 맛집킬러, 맛집가이드, 미식가, gourmetkillerguide, nfnl, nofoodnolife"
+    />
+    <meta name="robots" content="all" />
+
+    <!-- css리셋 -->
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://kit.fontawesome.com/fb27592f06.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/sub_2.css" />
+
+    <!-- css섹션 -->
+    <link rel="stylesheet" href="#" />
+  </head>
+  <body class="white_color">
+    <!-- mobile header -->
+    <div id="mNav">
+      <button><i class="fa-solid fa-bars"></i></button>
+      <nav class="mNav_nav">
+        <ul>
+          <li><a href="subpage_01.html">이달의 음식</a></li>
+          <li>
+            <div class="sub">
+              <a href="subpage_02_b1.html">지역별 소개</a
+              ><i class="fa-solid fa-angle-down" style="color: #fff"></i>
+            </div>
+            <ul class="submenu">
+              <li><a href="subpage_02_b1.html">지역별</a></li>
+              <li><a href="subpage_02_kr.html">음식별</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="sub">
+              <a href="subpage_03.html">커뮤니티</a>
+              <i class="fa-solid fa-angle-down" style="color: #fff"></i>
+            </div>
+            <ul class="submenu">
+              <li><a href="subpage_03.html">게시판</a></li>
+              <li><a href="subpage_03.html">X파일</a></li>
+              <li><a href="subpage_03.html">유튜버 인증 리뷰</a></li>
+            </ul>
+          </li>
+          <li><a href="subpage_04.html">회사 소개</a></li>
+          <li><a href="javascript:void(0)">로그인</a></li>
+        </ul>
+        <a href="javascript:void(0)" class="mNav_btn">
+          <i class="fa-solid fa-magnifying-glass" style="color: #fff"></i>
+        </a>
+      </nav>
+    </div>
+    <!-- mobile header -->
+
+    <!-- header -->
+    <header id="header" class="white_color">
+      <div class="logo">
+        <a href="../../index.html"><img src="../img/logo_nfnl_126_53.png" alt="로고이미지" /></a>
+      </div>
+      <div class="lnb">
+        <ul>
+          <li>
+            <a href="subpage_01.html">이 달의 음식</a>
+          </li>
+          <li>
+            <a href="subpage_02_b1.html">지역별 소개</a>
+            <ul class="submenu2">
+              <li><a href="subpage_02_b1.html">지역별</a></li>
+              <li><a href="subpage_02_kr.html">음식별</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="subpage_03.html">커뮤니티</a>
+            <ul class="submenu2">
+              <li><a href="subpage_03.html">게시판</a></li>
+              <li><a href="subpage_03.html">X파일</a></li>
+              <li><a href="subpage_03.html">유튜버 인증 리뷰</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="subpage_04.html">회사소개</a>
+          </li>
+        </ul>
+      </div>
+      <div class="gnb">
+        <form class="search_box" role="search">
+          <label for="searchInput" class="ir_so">상품검색</label>
+          <button type="submit"><span class="ir_so">버튼</span></button>
+          <input type="text" id="searchInput" placeholder="장소, 메뉴명, 식당명을 입력하세요." />
+        </form>
+        <a href="javascript:void(0)">로그인</a>
+      </div>
+    </header>
+    <!-- //header -->
+
+    <!-- main 지역소개_지역 -->
+    <div class="main_sub_2">
+      <div class="security_classification">
+        <div class="classification_header">
+          <h3>보안 분류</h3>
+        </div>
+        <div class="main_category">
+          <!-- 좌측 메인 메뉴 -->
+          <div class="side_tabs">
+            <div class="st_item active" onclick="changeMainTab('지역', this)">지역</div>
+            <div class="st_item" onclick="changeMainTab('음식', this)">음식</div>
+            <div class="st_item" onclick="changeMainTab('상세', this)">상세</div>
+          </div>
+          <!-- 우측 상세 선택 영역 -->
+          <div class="mid_category">
+            <div class="mc_row" id="mid_menu">
+              <!-- 중분류 버튼 div class mid_item -->
+            </div>
+            <div class="small_category_list" id="small_menu">
+              <!-- 소분류 버튼 div class sub_item -->
+            </div>
+          </div>
+        </div>
+        <button class="btn_search">선택된 조건 검색하기</button>
+      </div>
+      <div class="target_list" id="target">
+        <div class="list_header">
+          <h3>타깃 리스트</h3>
+          <ul>
+            <a href="javascript:void(0)" class="virtual">리뷰 많은순</a>
+            <a href="javascript:void(0)">별점순</a>
+          </ul>
+        </div>
+        <div class="target_card_list" id="target">
+          <a class="card card01" href="subpage_05-3.html">
+            <img src="../img/sub_2/restaurant_001.png" alt="식당사진" />
+            <ul class="card_content">
+              <li class="card_title">아카루이</li>
+              <li class="card_information">
+                <p>서울 강동구 올림픽로70길 31 지하1층</p>
+                <p class="ci_num">0507-1412-9800</p>
+              </li>
+              <li class="card_rating"><span class="rating r5 ir_pm">별점 5점</span></li>
+            </ul>
+          </a>
+          <a class="card card02" href="subpage_05-3.html">
+            <img src="../img/sub_2/restaurant_002.png" alt="식당사진" />
+            <ul class="card_content">
+              <li class="card_title">스시 도쿠타미동</li>
+              <li class="card_information">
+                <p>서울 성동구 왕십리로 295 왕십리가축병원 2층</p>
+                <p class="ci_num">0507-1312-0099</p>
+              </li>
+              <li class="card_rating"><span class="rating r5 ir_pm">별점 5점</span></li>
+            </ul>
+          </a>
+          <a class="card card03" href="subpage_05-3.html">
+            <img src="../img/sub_2/restaurant_003.png" alt="식당사진" />
+            <ul class="card_content">
+              <li class="card_title">치히로</li>
+              <li class="card_information">
+                <p>전북 군산시 구영5길 81</p>
+                <p class="ci_num">070-7576-1751</p>
+              </li>
+              <li class="card_rating"><span class="rating r5 ir_pm">별점 5점</span></li>
+            </ul>
+          </a>
+          <a class="card card04" href="subpage_05-3.html">
+            <img src="../img/sub_2/restaurant_004.png" alt="식당사진" />
+            <ul class="card_content">
+              <li class="card_title">파동</li>
+              <li class="card_information">
+                <p>서울 마포구 월드컵로17길 47 지하1층</p>
+                <p class="ci_num">070-4118-0730</p>
+              </li>
+              <li class="card_rating"><span class="rating r4 ir_pm">별점 4.5점</span></li>
+            </ul>
+          </a>
+          <a class="card card05" href="subpage_05-3.html">
+            <img src="../img/sub_2/restaurant_005.png" alt="식당사진" />
+            <ul class="card_content">
+              <li class="card_title">도쿄미식당</li>
+              <li class="card_information">
+                <p>경기 남양주시 다산순환로 397-125</p>
+                <p class="ci_num">0507-1314-5935</p>
+              </li>
+              <li class="card_rating"><span class="rating r5 ir_pm">별점 5점</span></li>
+            </ul>
+          </a>
+          <a class="card card06" href="subpage_05-3.html">
+            <img src="../img/sub_2/restaurant_006.png" alt="식당사진" />
+            <ul class="card_content">
+              <li class="card_title">우마이식당</li>
+              <li class="card_information">
+                <p>경기도 안양시 동안구 평촌대로223번길 52 원천빌딩 202호</p>
+                <p class="ci_num">0507-1305-8340</p>
+              </li>
+              <li class="card_rating"><span class="rating r3 ir_pm">별점 4점</span></li>
+            </ul>
+          </a>
+          <a class="card card07" href="subpage_05-3.html">
+            <img src="../img/sub_2/restaurant_007.png" alt="식당사진" />
+            <ul class="card_content">
+              <li class="card_title">쇼쿠지</li>
+              <li class="card_information">
+                <p>서울 서초구 서운로6길 19 1층</p>
+                <p class="ci_num">0507-1349-8740</p>
+              </li>
+              <li class="card_rating"><span class="rating r4 ir_pm">별점 4.5점</span></li>
+            </ul>
+          </a>
+          <a class="card card08" href="subpage_05-3.html">
+            <img src="../img/sub_2/restaurant_008.png" alt="식당사진" />
+            <ul class="card_content">
+              <li class="card_title">페이센동</li>
+              <li class="card_information">
+                <p>부산 수영구 민락로 7-5 2층</p>
+                <p class="ci_num">051-757-9399</p>
+              </li>
+              <li class="card_rating"><span class="rating r3 ir_pm">별점 4점</span></li>
+            </ul>
+          </a>
+          <a class="card card09" href="subpage_05-3.html">
+            <img src="../img/sub_2/restaurant_009.png" alt="식당사진" />
+            <ul class="card_content">
+              <li class="card_title">동면</li>
+              <li class="card_information">
+                <p>서울 송파구 위례성대로20길 29</p>
+                <p class="ci_num">02-6369-2152</p>
+              </li>
+              <li class="card_rating"><span class="rating r1 ir_pm">별점 3점</span></li>
+            </ul>
+          </a>
+          <a class="card card10" href="subpage_05-3.html">
+            <img src="../img/sub_2/restaurant_010.png" alt="식당사진" />
+            <ul class="card_content">
+              <li class="card_title">료혼본관</li>
+              <li class="card_information">
+                <p>경기도 수원시 팔달구 인계로124번길 36</p>
+                <p class="ci_num">031-222-7867</p>
+              </li>
+              <li class="card_rating"><span class="rating r3 ir_pm">별점 4점</span></li>
+            </ul>
+          </a>
+          <a class="card card11" href="subpage_05-3.html">
+            <img src="../img/sub_2/restaurant_011.png" alt="식당사진" />
+            <ul class="card_content">
+              <li class="card_title">온정</li>
+              <li class="card_information">
+                <p>서울 마포구 동교로 262-10 반지층 좌측</p>
+                <p class="ci_num">02-6052-7038</p>
+              </li>
+              <li class="card_rating"><span class="rating r2 ir_pm">별점 3.5점</span></li>
+            </ul>
+          </a>
+          <a class="card card12" href="subpage_05-3.html">
+            <img src="../img/sub_2/restaurant_012.png" alt="식당사진" />
+            <ul class="card_content">
+              <li class="card_title">다다</li>
+              <li class="card_information">
+                <p>강원도 강릉시 원대로 191 1층</p>
+                <p class="ci_num">033-646-5575</p>
+              </li>
+              <li class="card_rating"><span class="rating r2 ir_pm">별점 3.5점</span></li>
+            </ul>
+          </a>
+        </div>
+        <div class="pagination">
+          <ul>
+            <li class="first">
+              <a class="turning_pages tps_l" href="subpage_02_b1.html#target"></a>
+            </li>
+            <li class="prev">
+              <a class="turning_pages tp_l" href="subpage_02_b1.html#target"></a>
+            </li>
+            <li class="pu active"><a href="subpage_02_b1.html#target" target="_self">1</a></li>
+            <li class="pu"><a href="subpage_02_b2.html#target">2</a></li>
+            <li class="pu"><a href="subpage_02_b3.html#target">3</a></li>
+            <li class="pu"><a href="subpage_02_b4.html#target">4</a></li>
+            <li class="pu"><a href="subpage_02_b5.html#target">5</a></li>
+            <li class="next">
+              <a class="turning_pages tp_r" href="subpage_02_b2.html#target"></a>
+            </li>
+            <li class="last">
+              <a class="turning_pages tps_r" href="subpage_02_b5.html#target"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- //main 지역소개_지역 -->
+
+    <!-- main BG -->
+    <div class="solid"></div>
+    <div class="file_bg">
+      <img class="f_bg1920" src="../img/sub_2/file_bg_1920.png" alt="배경이미지" />
+      <img class="f_bg960" src="../img/sub_2/file_bg_960.png" alt="배경이미지" />
+      <img class="f_bg480" src="../img/sub_2/file_bg_480.png" alt="배경이미지" />
+    </div>
+    <!-- //main BG -->
+
+    <!-- footer -->
+    <footer id="footer" class="footer">
+      <div class="footer_list">
+        <ul>
+          <li class="footer_use">
+            <span class="virtual">
+              <a href="javascript:void(0)">
+                <strong>이용약관</strong>
+              </a>
+            </span>
+            <span class="virtual">
+              <a href="javascript:void(0)">
+                <strong>기업회원 이용약관</strong>
+              </a>
+            </span>
+            <span class="virtual">
+              <a href="javascript:void(0)">
+                <strong>개인정보처리방침</strong>
+              </a>
+            </span>
+            <span>
+              <a href="javascript:void(0)">
+                <strong>사이트맵</strong>
+              </a>
+            </span>
+          </li>
+          <li class="footer_company">
+            <span class="virtual"><em>상호 : </em>엔에프엔엘주식회사</span>
+            <span class="virtual"><em>대표이사 : </em>우용이와 아이들</span>
+            <span><em>개인정보관리책임자 : </em>엠비씨컴퓨터아카데미</span>
+          </li>
+          <li class="footer_inquiry">
+            <span class="virtual"
+              ><em>문의 : </em><a href="mailto:nfnl_5@nfnl.co.kr">nfnl_5@nfnl.co.kr</a></span
+            >
+            <span class="virtual">
+              <a href="javascript:void(0)" target="_blank">제휴문의</a>
+            </span>
+            <span class="virtual"><em>사업자등록번호 : </em>220-85-31915</span>
+            <span><em>통신판매업 신고번호 : </em>2026-서울강동-06805호</span>
+          </li>
+          <li class="footer_address">
+            <span>서울특별시 강동구 천호대로157길 14 나비빌딩 8층 5호</span>
+          </li>
+          <li class="footer_sns">
+            <a href="https://www.instagram.com/" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+              <i class="fa-brands fa-square-facebook"></i>
+            </a>
+            <a href="https://www.youtube.com/" target="_blank">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </li>
+        </ul>
+        <span class="footer_copyright"
+          >&copy;<span>2026</span>NFNL Gaid Inc. All Rights Reserved</span
+        >
+      </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="../javascript/main_swiper.js"></script>
+    <script src="../javascript/sub_2_jp.js"></script>
+  </body>
+</html>

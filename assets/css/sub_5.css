@@ -1,0 +1,506 @@
+body {
+  background-color: #fff;
+}
+#store > .container {
+  padding: 0 98px;
+  box-sizing: border-box;
+}
+#title {
+  width: 100%;
+}
+#title img {
+  width: 100%;
+}
+
+/* store_name */
+.store_name {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 97px;
+}
+.name_left {
+  width: 48%;
+}
+.name_left h1 {
+  display: flex;
+  font-size: 34px;
+  color: #000;
+  font-weight: bold;
+
+  width: 100%;
+  border-bottom: 3px solid #8d0002;
+  padding-bottom: 17px;
+}
+.name_left span {
+  display: inline-block;
+  padding-right: 11px;
+  margin-top: -5px;
+}
+.name_left ul {
+  padding-bottom: 130px;
+}
+.name_left ul li {
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: normal;
+  color: #000;
+}
+.name_left ul li span {
+  padding-right: 30px;
+}
+.name_right {
+  width: 49%;
+  height: 280px;
+  margin-top: 52px;
+}
+/* 메뉴 타이틀 */
+.menu_title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 26px;
+  font-weight: 500;
+  color: #000;
+  border-bottom: 3px solid #8d0002;
+  padding-bottom: 15px;
+}
+.menu_title p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #949494;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.menu_title .fa-plus {
+  color: #ee0000;
+  font-size: 11px;
+}
+/* ////메뉴타이틀 */
+
+/* 스와이퍼 */
+.menubox-wrap {
+  position: relative;
+  margin-top: 53px;
+}
+.swiper {
+  position: static;
+}
+.menubox {
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+}
+.menubox h3 {
+  color: #454545;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.menubox p {
+  margin-top: 5px;
+  color: #454545;
+  font-weight: normal;
+}
+
+.menubox .swiper-button-prev {
+  left: 0;
+  color: #000;
+}
+
+.menubox .swiper-button-next {
+  right: 0;
+  color: #000;
+}
+/* 리뷰 */
+.review {
+  margin-top: 50px;
+}
+
+.reviewCard {
+  background-image: url(../img/sub_5/card_gray.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 100%;
+  height: 350px;
+  border-radius: 20px;
+  padding: 15%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateY(70px);
+  transition: all 0.5s;
+
+  cursor: pointer;
+}
+.reviewCard:hover {
+  transform: translateY(20px);
+  background-image: url(../img/sub_5/card.png);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.288);
+}
+
+.textBox > h1 {
+  font-size: 22px;
+  color: #101010;
+  font-weight: bold;
+}
+.textBox > p {
+  font-size: 14px;
+  color: #636363;
+  font-weight: 400;
+  padding-top: 25px;
+  line-height: 1.5;
+}
+.reviewCard:hover .userBox {
+  color: #fff;
+}
+.reviewCard:hover .starIcon {
+  color: #ee0000;
+}
+.review_btn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 137px;
+  width: 246px;
+  height: 58px;
+  border-radius: 50px;
+  background-color: #ee0000;
+
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+.review_btn:hover {
+  background-color: #8d0002;
+}
+.userBox {
+}
+.userBox span.starIcon {
+  color: #454545;
+  display: block;
+  margin-bottom: 10px;
+}
+.userBox div.user {
+  display: flex;
+  flex-wrap: wrap;
+}
+.userBox div.user span {
+  display: block;
+  padding: 6px 8px;
+  background-color: rgb(214, 214, 214);
+  margin-right: 10px;
+}
+.userBox div.user span i {
+  font-size: 15px;
+  color: #a1a1a1;
+}
+.userBox div.user div strong {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 4px;
+}
+.userBox div.user div p {
+  font-size: 12px;
+}
+
+/* 다른 가게 정보 */
+.other_store {
+  margin-top: 110px;
+  margin-bottom: 100px;
+}
+
+.info_wrap {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+.storeBox {
+  margin-top: 50px;
+  padding: 0 25px;
+}
+.storeBox img {
+  margin-bottom: 22px;
+  cursor: pointer;
+}
+.storeText {
+  line-height: 23px;
+}
+.storeText > h1 {
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+}
+.storeText > p {
+  font-size: 16px;
+  color: #ee0000;
+  font-weight: 600;
+}
+.storeText > span {
+  font-size: 16px;
+  font-weight: 400;
+  color: #a8a8a8;
+  margin-bottom: 100px;
+}
+
+/* 미디어 쿼리 */
+@media (max-width: 1450px) {
+  #store > .container {
+    width: 100%;
+  }
+  .reviewCard {
+    height: 320px;
+  }
+  .textBox > p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5; /* 3줄로 자르기 */
+    overflow: hidden; /* 넘치는 부분 숨기기 */
+  }
+  .userBox div.user span {
+    display: none;
+  }
+  .storeBox {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 940px) {
+  #store > .container {
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+  .store_name {
+    display: flex;
+    flex-direction: column;
+  }
+  .name_left {
+    width: 100%;
+  }
+  .name_left ul {
+    padding-bottom: 0px;
+  }
+  .name_right {
+    width: 100%;
+    margin-bottom: 42px;
+  }
+  .textBox > h1 {
+    font-size: 18px;
+  }
+  .textBox > p {
+    padding-top: 15px;
+  }
+  .reviewCard {
+    height: 300px;
+  }
+  .review_btn {
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+
+    font-size: 18px;
+  }
+  .storeBox img {
+    margin-bottom: 15px;
+  }
+  .storeBox {
+    padding: 0 15px;
+  }
+  .storeBox:nth-child(5) {
+    display: none;
+  }
+
+  .storeText {
+    line-height: 18px;
+  }
+  .storeText > h1 {
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .storeText > p {
+    font-size: 15px;
+    color: #ee0000;
+    font-weight: 600;
+  }
+  .storeText > span {
+    font-size: 15px;
+    font-weight: 400;
+    color: #a8a8a8;
+    margin-bottom: 100px;
+  }
+}
+@media (max-width: 768px) {
+  #store > .container {
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+  .store_name {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+  }
+  .name_left {
+    width: 100%;
+  }
+  .name_left span {
+  }
+  .name_left h1 {
+    font-size: 30px;
+  }
+  .name_left ul {
+    padding-bottom: 0px;
+  }
+  .name_right {
+    width: 100%;
+    margin-bottom: 42px;
+  }
+
+  /* 스와이퍼 */
+  .menubox {
+    width: 100%;
+  }
+  .menubox .swiper-button-prev {
+    display: none;
+  }
+
+  .menubox .swiper-button-next {
+    display: none;
+  }
+
+  .reviewCard {
+    height: 280px;
+  }
+
+  .storeBox {
+    margin-top: 50px;
+    padding: 0 10px;
+  }
+}
+@media (max-width: 480px) {
+  .store_name {
+    padding-top: 30px;
+  }
+  .name_left span {
+    width: 10%;
+    display: inline-block;
+    padding-right: 5px;
+    margin-top: -6px;
+  }
+  .name_left > h1 {
+    font-size: 24px;
+    padding-bottom: 5px;
+  }
+
+  .name_left ul li {
+    padding-top: 5px;
+    font-size: 16px;
+  }
+
+  .name_left ul li span {
+    margin-top: 10px;
+    padding-right: 5px;
+    width: 6%;
+  }
+  /* 메뉴 타이틀 */
+  .menu_title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    border-bottom: 3px solid #8d0002;
+    padding-bottom: 1px;
+  }
+  .menu_title p {
+    font-size: 12px;
+    font-weight: bold;
+    color: #949494;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  .menu_title .fa-plus {
+    color: #ee0000;
+    font-size: 10px;
+  }
+  .info_wrap {
+    flex-wrap: nowrap;
+  }
+  .storeBox {
+    width: 50%;
+    margin-top: 30px;
+    padding: none;
+  }
+
+  .storeBox img {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+}
+@media (max-width: 400px) {
+  .name_left span {
+    width: 10%;
+    display: inline-block;
+    padding-right: 5px;
+    margin-top: -3px;
+  }
+}
+@media (max-width: 340px) {
+  .store_name {
+    padding-top: 30px;
+  }
+  .name_left span {
+    width: 13%;
+    display: inline-block;
+    padding-right: 5px;
+    margin-top: -4px;
+  }
+  .name_left h1 {
+    font-size: 24px;
+    padding-bottom: 10px;
+  }
+
+  .name_left ul li {
+    padding-top: 5px;
+    font-size: 16px;
+  }
+
+  .name_left ul li span {
+    margin-top: 10px;
+    padding-right: 5px;
+    width: 9%;
+  }
+  /* 메뉴 타이틀 */
+  .menu_title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    border-bottom: 3px solid #8d0002;
+    padding-bottom: 1px;
+  }
+  .menu_title p {
+    font-size: 12px;
+    font-weight: bold;
+    color: #949494;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  .menu_title .fa-plus {
+    color: #ee0000;
+    font-size: 10px;
+  }
+
+  .reviewCard {
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+    padding: 15%;
+  }
+  .textBox > p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* 3줄로 자르기 */
+    overflow: hidden; /* 넘치는 부분 숨기기 */
+  }
+  .other_store {
+    margin-top: 60px;
+    margin-bottom: 80px;
+  }
+}

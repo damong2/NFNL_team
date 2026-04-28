@@ -340,16 +340,7 @@ const categoryData = {
       "기타",
     ],
 
-    뷔페: [
-      "과일시즌",
-      "디저트섹션",
-      "샐러드바",
-      "신선코너",
-      "즉석로스트",
-      "초콜릿퐁듀",
-      "핫플레이트",
-      "기타",
-    ],
+    뷔페: ["과일시즌", "디저트섹션", "샐러드바", "신선코너", "즉석로스트", "초콜릿퐁듀", "핫플레이트", "기타"],
 
     카페: [
       "ABC주스",
@@ -543,29 +534,11 @@ const categoryData = {
 
     영업시간: ["24시영업", "영업중", "주중", "주말", "오전", "오후", "저녁", "새벽"],
 
-    정렬: [
-      "요즘뜨는",
-      "많이찾는",
-      "재방문높은",
-      "TV에나온",
-      "가격대",
-      "가까운",
-      "별점순",
-      "리뷰많은순",
-    ],
+    정렬: ["요즘뜨는", "많이찾는", "재방문높은", "TV에나온", "가격대", "가까운", "별점순", "리뷰많은순"],
 
     별점: ["5", "4.5", "4", "3.5", "3", "2.5", "2", "1.5", "1", "0.5"],
 
-    기타: [
-      "브랜드관",
-      "프랜차이즈",
-      "웨이팅",
-      "오마카세",
-      "최저가",
-      "핫플레이스",
-      "미쉐린",
-      "인기급상승",
-    ],
+    기타: ["브랜드관", "프랜차이즈", "웨이팅", "오마카세", "최저가", "핫플레이스", "미쉐린", "인기급상승"],
   },
 };
 
@@ -705,31 +678,11 @@ window.onload = () => {
 };
 
 // pagination
-const paginationBtn = document.querySelectorAll(".pagination ul li");
-const Btn = document.querySelectorAll(".pagination ul li a");
+const currentPage = location.pathname.split("b")[1].split(".")[0];
 
-//페이지 선택한것만 반응
-paginationBtn.forEach((menu, index) => {
-  menu.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    paginationBtn.forEach((item) => {
-      item.classList.remove("active");
-    });
-    menu.classList.add("active");
-
-    Btn[index].style.display = "block";
-  });
-});
-
-// 마우스 인포 출력용
-window.addEventListener("mousemove", function (event) {
-  document.querySelector(".clientX").innerText = event.clientX;
-  document.querySelector(".clientY").innerText = event.clientY;
-  document.querySelector(".offsetX").innerText = event.offsetX;
-  document.querySelector(".offsetY").innerText = event.offsetY;
-  document.querySelector(".pageX").innerText = event.pageX;
-  document.querySelector(".pageY").innerText = event.pageY;
-  document.querySelector(".screenX").innerText = event.screenX;
-  document.querySelector(".screenY").innerText = event.screenY;
+document.querySelectorAll(".pu").forEach((li) => {
+  const page = li.innerText;
+  if (page === currentPage) {
+    li.classList.add("active");
+  }
 });

@@ -1,45 +1,48 @@
 gsap.registerPlugin(ScrollTrigger);
 
-const box1 = document.querySelector(".no1");
-const box2 = document.querySelector(".no2");
-const box3 = document.querySelector(".no3");
+const mm = gsap.matchMedia();
 
-// box1 → 왼쪽에서
-gsap.from(box1, {
-  x: -300,
-  opacity: 0,
-  duration: 0.5,
-  scrollTrigger: {
-    trigger: box1,
-    start: "top+=500 bottom",
-    once: true,
-  },
+mm.add("(min-width: 481px)", () => {
+  const box1 = document.querySelector(".no1");
+  const box2 = document.querySelector(".no2");
+  const box3 = document.querySelector(".no3");
+
+  // box1 → 왼쪽에서
+  gsap.from(box1, {
+    x: -300,
+    opacity: 0,
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: box1,
+      start: "top+=500 bottom",
+      once: true,
+    },
+  });
+
+  // box2 → 오른쪽에서
+  gsap.from(box2, {
+    x: 300,
+    opacity: 0,
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: box2,
+      start: "top+=500 bottom",
+      once: true,
+    },
+  });
+
+  // box3 → 다시 왼쪽에서
+  gsap.from(box3, {
+    x: -300,
+    opacity: 0,
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: box3,
+      start: "top+=500 bottom",
+      once: true,
+    },
+  });
 });
-
-// box2 → 오른쪽에서
-gsap.from(box2, {
-  x: 300,
-  opacity: 0,
-  duration: 0.5,
-  scrollTrigger: {
-    trigger: box2,
-    start: "top+=500 bottom",
-    once: true,
-  },
-});
-
-// box3 → 다시 왼쪽에서
-gsap.from(box3, {
-  x: -300,
-  opacity: 0,
-  duration: 0.5,
-  scrollTrigger: {
-    trigger: box3,
-    start: "top+=500 bottom",
-    once: true,
-  },
-});
-
 // recipe
 gsap.registerPlugin(ScrollTrigger);
 

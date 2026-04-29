@@ -1,8 +1,6 @@
 //header scroll
 let lastScrollTop = 0;
 window.addEventListener("scroll", function () {
-  if (window.innerWidth <= 768) return;
-
   let scrollTop = window.scrollY + window.innerHeight / 2;
   let scrollTop2 = window.scrollY;
 
@@ -28,10 +26,14 @@ menu.forEach(function (menuList) {
   menuList.addEventListener("click", function () {
     const subMenu = this.querySelector("ul");
 
+    if (!subMenu) return;
+
     if (subMenu.style.height === "120px") {
       subMenu.style.height = "0px";
+      this.classList.remove("updown");
     } else {
       subMenu.style.height = "120px";
+      this.classList.add("updown");
     }
   });
 });
@@ -53,12 +55,8 @@ navList.addEventListener("mouseout", function () {
   document.querySelector("#header").classList.remove("on");
 });
 
-// Initialize Lenis
-const lenis = new Lenis({
-  autoRaf: true,
-});
+gsap.registerPlugin(ScrollTrigger);
 
-// Listen for the scroll event and log the event data
-lenis.on("scroll", (e) => {
-  console.log(e);
-});
+const box1 = document.querySelector(".no1");
+const box2 = document.querySelector(".no2");
+const box3 = document.querySelector(".no3");

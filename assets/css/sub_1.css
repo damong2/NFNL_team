@@ -308,7 +308,7 @@ span.food_txt {
 /* //vote1 */
 .vote2_inner {
   background-color: #460000;
-  margin-bottom: 80px;
+  /* margin-bottom: 80px; */
 }
 .vote2_inner .container {
   box-sizing: border-box;

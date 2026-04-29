@@ -23,21 +23,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <script src="https://kit.fontawesome.com/fb27592f06.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/main_swiper.css" />
 
     <!-- css섹션 -->
+    <link rel="stylesheet" href="#" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
-    <!-- header -->
+    <div class="cursor" id="cursor">
+      <img id="cursorImg" src="assets/icons/m1_50_g.png" alt="cursor" />
+    </div>
+    <!-- mobile header -->
     <div id="mNav">
       <button><i class="fa-solid fa-bars"></i></button>
       <nav class="mNav_nav">
         <ul>
-          <li><a href="assets/html/subpage_01.html">이달의 음식</a></li>
+          <li>
+            <a href="assets/html/subpage_01.html">이달의 음식</a>
+            <ul class="submenu">
+              <li><a href="assets/html/subpage_05-1.html">BEST 1</a></li>
+              <li><a href="assets/html/subpage_05-2.html">BEST 2</a></li>
+              <li><a href="assets/html/subpage_05-3.html">BEST 3</a></li>
+            </ul>
+          </li>
           <li>
             <div class="sub">
-              <a href="assets/html/subpage_02_b1.html">지역별 소개</a
+              <a href="assets/html/subpage_02_b1.html">킬러의 장부</a
               ><i class="fa-solid fa-angle-down" style="color: #fff"></i>
             </div>
             <ul class="submenu">
@@ -47,7 +57,8 @@
           </li>
           <li>
             <div class="sub">
-              <a href="#">커뮤니티</a><i class="fa-solid fa-angle-down" style="color: #fff"></i>
+              <a href="assets/html/subpage_03.html">커뮤니티</a>
+              <i class="fa-solid fa-angle-down" style="color: #fff"></i>
             </div>
             <ul class="submenu">
               <li><a href="assets/html/subpage_03.html">게시판</a></li>
@@ -56,38 +67,51 @@
             </ul>
           </li>
           <li><a href="assets/html/subpage_04.html">회사 소개</a></li>
-          <li><a href="#">로그인</a></li>
+          <li><a href="javascript:void(0)">로그인</a></li>
         </ul>
+        <a href="javascript:void(0)" class="mNav_btn">
+          <i class="fa-solid fa-magnifying-glass" style="color: #fff"></i>
+        </a>
       </nav>
     </div>
-    <!-- //mobile header -->
+    <!-- mobile header -->
 
-    <header id="header">
+    <!-- header -->
+    <header id="header" class="white_color">
       <div class="logo">
-        <a href="index.html"><img src="assets/img/logo_nfnl_126_53.png" alt="로고이미지" /></a>
+        <a href="index.html"
+          ><img src="assets/img/logo_nfnl_126_53.png" class="hover-target" alt="로고이미지"
+        /></a>
       </div>
       <div class="lnb">
         <ul>
           <li>
-            <a href="assets/html/subpage_01.html">이 달의 음식</a>
-          </li>
-          <li>
-            <a href="assets/html/subpage_02_b1.html">지역별 소개</a>
+            <a href="assets/html/subpage_01.html" class="hover-target">이달의 음식</a>
             <ul class="submenu2">
-              <li><a href="assets/html/subpage_02_b1.html">지역별</a></li>
-              <li><a href="assets/html/subpage_02_kr.html">음식별</a></li>
+              <li><a href="assets/html/subpage_05-1.html" class="hover-target">BEST 1</a></li>
+              <li><a href="assets/html/subpage_05-2.html" class="hover-target">BEST 2</a></li>
+              <li><a href="assets/html/subpage_05-3.html" class="hover-target">BEST 3</a></li>
             </ul>
           </li>
           <li>
-            <a href="assets/html/subpage_03.html">커뮤니티</a>
+            <a href="assets/html/subpage_02_b1.html" class="hover-target">킬러의 장부</a>
             <ul class="submenu2">
-              <li><a href="assets/html/subpage_03.html">게시판</a></li>
-              <li><a href="assets/html/subpage_03.html">X파일</a></li>
-              <li><a href="assets/html/subpage_03.html">유튜버 인증 리뷰</a></li>
+              <li><a href="assets/html/subpage_02_b1.html" class="hover-target">지역별</a></li>
+              <li><a href="assets/html/subpage_02_kr.html" class="hover-target">음식별</a></li>
             </ul>
           </li>
           <li>
-            <a href="assets/html/subpage_04.html">회사소개</a>
+            <a href="assets/html/subpage_03.html" class="hover-target">커뮤니티</a>
+            <ul class="submenu2">
+              <li><a href="assets/html/subpage_03.html" class="hover-target">게시판</a></li>
+              <li><a href="assets/html/subpage_03.html" class="hover-target">X파일</a></li>
+              <li>
+                <a href="assets/html/subpage_03.html" class="hover-target">유튜버 인증 리뷰</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="assets/html/subpage_04.html" class="hover-target">회사소개</a>
           </li>
         </ul>
       </div>
@@ -95,9 +119,9 @@
         <form class="search_box" role="search">
           <label for="searchInput" class="ir_so">상품검색</label>
           <button type="submit"><span class="ir_so">버튼</span></button>
-          <input type="text" id="searchInput" placeholder="장소, 메뉴명, 식당명을 입력하세요." />
+          <input type="text" id="searchInput" placeholder="장소 및 메뉴" />
         </form>
-        <a href="#">로그인</a>
+        <a href="javascript:void(0)" class="hover-target">로그인</a>
       </div>
     </header>
     <!-- //header -->
@@ -105,27 +129,47 @@
     <!-- main -->
     <!-- main vedio -->
     <main id="main">
-      <video src="assets/img/NFNL_Video.mp4"></video>
+      <video src="assets/media/NFNL_Video.mp4" autoplay muted loop playsinline width="100%"></video>
     </main>
     <!-- //main vedio -->
 
-    <!-- warining line -->
+    <!-- warining line 1&2 -->
     <div class="txt_rolling">
       <!-- 텍스트 롤링 1 -->
       <div class="txtRolling1 rolling-1">
         <div class="wrap">
           <div class="wrap-box">
             <div class="rolling-list">
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
             </div>
           </div>
         </div>
@@ -136,83 +180,119 @@
         <div class="wrap">
           <div class="wrap-box">
             <div class="rolling-list">
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
             </div>
           </div>
         </div>
       </div>
       <!-- //텍스트 롤링 2 -->
     </div>
-    <!-- //warining line -->
+    <!-- //warining line 1&2 -->
 
-    <div class="container">
-      <!-- 이달의 메뉴 TOP3, 투표 배너 -->
-      <div class="section1">
-        <h1>맛집 저격러들 모여라!</h1>
-        <p>
-          맛집 킬러가 엄선한 이달의 <strong>TOP 3</strong> 확인하고, 다음 타겟을 직접
-          <strong>투표</strong>하세요
-        </p>
-        <div class="img_box">
-          <div class="section_left">
-            <img src="assets/img/main/rank.png" alt="이달의 음식 랭킹" />
-            <a href="assets/html/subpage_01.html#target_top"
-              ><img class="arrow1" src="assets/img/main/arrow.png" alt="바로가기 화살표"
-            /></a>
-          </div>
-          <div class="section_right">
-            <img src="assets/img/main/ballot.png" alt="맛집 투표" />
-            <a href="assets/html/subpage_01.html#target_vote">
-              <img class="arrow2" src="assets/img/main/arrow.png" alt="바로가기 화살표" />
-            </a>
-          </div>
-        </div>
+    <!-- 이달의 메뉴 TOP3, 투표 배너 -->
+    <div class="section1">
+      <h1>맛집 저격러들 모여라!</h1>
+      <p>
+        맛집 킬러가 엄선한 이달의 <strong>TOP 3</strong> 확인하고, 다음 타겟을 직접
+        <strong>투표</strong>하세요
+      </p>
+      <div class="img_box">
+        <a class="section_left" href="assets/html/subpage_01.html#target_top">
+          <img src="assets/img/main/rank.png" alt="명당" />
+        </a>
+        <a class="section_right" href="assets/html/subpage_01.html#target_vote">
+          <img src="assets/img/main/ballot.png" alt="투표" />
+        </a>
       </div>
-      <!-- //이달의 메뉴 TOP3, 투표 배너 -->
-      <!-- X-FOOD 이벤트 -->
-      <div class="section2">
-        <h1>X-FOOD</h1>
-        <p><strong>주차별 미션</strong>을 확인하고 맛있는 <strong>보상</strong>을 수령하세요!</p>
-        <img src="assets/img/main/xfood.png" alt="x-food" />
-      </div>
-      <!-- //X-FOOD 이벤트 -->
     </div>
+    <!-- //이달의 메뉴 TOP3, 투표 배너 -->
 
-    <!-- warining line -->
+    <!-- warining line 3-->
     <div class="txt_rolling">
       <!-- 텍스트 롤링 3 -->
       <div class="txtRolling2 rolling-3">
         <div class="wrap">
           <div class="wrap-box">
             <div class="rolling-list">
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_black.png" alt="" /></div>
-              <div class="list"><img src="assets/img/main/logo-txt_color.png" alt="" /></div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
+              <div class="list">
+                <img src="assets/img/main/warning_line_1.png" alt="warning_line" />
+              </div>
             </div>
           </div>
         </div>
       </div>
       <!-- //텍스트 롤링 3 -->
     </div>
-    <!-- //warining line -->
+    <!-- //warining line 3 -->
+
+    <!-- X-FOOD 이벤트 -->
+    <div class="section2">
+      <h1>X-FOOD</h1>
+      <p><strong>주차별 미션</strong>을 확인하고 맛있는 <strong>보상</strong>을 수령하세요!</p>
+      <img src="assets/img/main/xfood.png" alt="x-food" />
+    </div>
+    <!-- //X-FOOD 이벤트 -->
+
     <!-- 전광판 유튜버 맛집 리뷰 -->
     <div class="section3">
+      <h1>맛집 구경하기</h1>
+      <p>유투버가 다녀간 <strong>맛집 리뷰</strong>를 체험하세요!</p>
       <div class="billboard">
         <img src="assets/img/main/youtube.png" alt="전광판 이미지" />
         <!-- Swiper -->
@@ -421,16 +501,16 @@
 
         const iframes = document.querySelectorAll(".NaNa iframe");
 
-        iframes.forEach((iframe) => {
+        iframes.forEach((iframe, index) => {
           const player = new YT.Player(iframe, {
             events: {
               onStateChange: function (event) {
-                // 영상이 실제로 재생될 때만 멈춤
+                // 영상 재생 중이면 스와이퍼 멈춤
                 if (event.data === YT.PlayerState.PLAYING) {
                   swiper.autoplay.stop();
                 }
 
-                // 영상이 멈추거나 끝나면 다시 시작
+                // 영상이 멈추거나 끝나면 다시 스와이퍼 시작
                 if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
                   swiper.autoplay.start();
                 }
@@ -442,19 +522,138 @@
         });
 
         swiper.on("slideChange", function () {
-          // 슬라이드 바뀌면 모든 영상 정지
           players.forEach((player) => {
             if (player && player.pauseVideo) {
               player.pauseVideo();
             }
           });
 
-          // autoplay 재시작 (혹시 꼬인 경우 대비)
-          setTimeout(() => {
-            swiper.autoplay.start();
-          }, 50);
+          swiper.autoplay.start();
         });
       }
+    </script>
+
+    <!-- cursor -->
+    <script>
+      // mouse effect
+      const cursor = document.getElementById("cursor");
+      const cursorImg = document.getElementById("cursorImg");
+      const targets = document.querySelectorAll(".hover-target");
+
+      let isHover = false;
+      let rippleInterval = null;
+      let mouseX = 0;
+      let mouseY = 0;
+
+      // 마우스 위치 추적
+      window.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.left = mouseX + "px";
+        cursor.style.top = mouseY + "px";
+      });
+
+      // 다중 여러 요소 hover
+      targets.forEach((el) => {
+        el.addEventListener("mouseenter", () => {
+          isHover = true;
+          // cursorImg.src = "assseticons/m1_50_g.png";
+          cursorImg.src = "assets/icons/m1_50_r.png";
+
+          // 일정 간격으로 ripple 생성
+          rippleInterval = setInterval(() => {
+            createRipple(mouseX, mouseY);
+          }, 700);
+        });
+
+        // hover 종료
+        el.addEventListener("mouseleave", () => {
+          isHover = false;
+          cursorImg.src = "assets/icons/m1_50_g.png";
+
+          // cursorImg.src = "assets/icons/m1_50_r.png";
+          clearInterval(rippleInterval);
+        });
+      });
+
+      // ripple
+      function createRipple(x, y) {
+        const ripple = document.createElement("div");
+        ripple.className = "ripple";
+        ripple.style.left = x + "px";
+        ripple.style.top = y + "px";
+        document.body.appendChild(ripple);
+        // 번지는 속도 조절
+        setTimeout(() => ripple.remove(), 3000);
+      }
+      // click ripple
+      function createClickRipple(x, y) {
+        const ripple = document.createElement("div");
+        ripple.className = "click-ripple";
+        ripple.style.left = x + "px";
+        ripple.style.top = y + "px";
+        document.body.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 800);
+      }
+
+      // click particle
+      function createExplosion(x, y) {
+        const colors = ["#ff0000", "#ff0844", "#f83600"];
+
+        for (let i = 0; i < 20; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+
+          // 크기 (작/중/대)
+          const sizeType = Math.random();
+          let size;
+          if (sizeType < 0.33) size = 4;
+          else if (sizeType < 0.66) size = 8;
+          else size = 14;
+
+          particle.style.width = size + "px";
+          particle.style.height = size + "px";
+
+          // 색상 랜덤
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          particle.style.background = color;
+          particle.style.boxShadow = `0 0 6px ${color}, 0 0 12px ${color}`;
+
+          // 방향 + 중력 느낌
+          const angle = Math.random() * Math.PI * 2;
+          const distance = Math.random() * 60 + 30;
+
+          let moveX = Math.cos(angle) * distance;
+          let moveY = Math.sin(angle) * distance;
+
+          // 중력 (아래로 더 떨어지게)
+          moveY += 60 + Math.random() * 40;
+
+          particle.style.left = x + "px";
+          particle.style.top = y + "px";
+          particle.style.setProperty("--x", moveX + "px");
+          particle.style.setProperty("--y", moveY + "px");
+
+          document.body.appendChild(particle);
+          setTimeout(() => particle.remove(), 600);
+        }
+      }
+
+      // click
+      window.addEventListener("mousedown", (e) => {
+        cursorImg.src = "assets/icons/m5_50_r.png";
+        cursor.style.width = "35px";
+        cursor.style.height = "35px";
+        createClickRipple(e.clientX, e.clientY);
+        createExplosion(e.clientX, e.clientY);
+      });
+
+      window.addEventListener("mouseup", () => {
+        // cursorImg.src = isHover ? "assets/icons/m1_50_g.png" : "assets/icons/m1_50_r.png";
+        cursorImg.src = isHover ? "assets/icons/m1_50_r.png" : "assets/icons/m1_50_g.png";
+        cursor.style.width = "50px";
+        cursor.style.height = "50px";
+      });
     </script>
   </body>
 </html>

@@ -61,6 +61,14 @@
 #mNav nav {
   display: none;
 }
+
+.mNav_nav i {
+  transition: transform 0.3s ease;
+}
+.mNav_nav li.updown i {
+  transform: rotate(180deg);
+}
+
 #mNav nav ul {
 }
 #mNav nav ul:nth-child(1) {

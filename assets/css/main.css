@@ -18,19 +18,20 @@
 .txtRolling1 {
   overflow: hidden;
   position: relative;
-  top: 1150px;
   left: 50%;
   width: 100%; /* 화면보다 넉넉하게 */
   transform-origin: center;
+  z-index: 10;
+  margin-top: -1%;
 }
 .txtRolling2 {
   overflow: hidden;
   position: relative;
-  top: 2150px;
   left: 50%;
   width: 100%; /* 화면보다 넉넉하게 */
   transform-origin: center;
-  z-index: -100;
+  z-index: 10;
+  margin-top: 10%;
 }
 .wrap-box {
   display: flex;
@@ -77,7 +78,7 @@
     transform: translateX(-50%);
   }
 }
-/* rolling-2 오른쪽으로 흐르는 애니메이션 */
+/* rolling-2, rolling-3 오른쪽으로 흐르는 애니메이션 */
 @keyframes rolling-right {
   0% {
     transform: translateX(-50%);
@@ -86,19 +87,9 @@
     transform: translateX(0);
   }
 }
-/* rolling-3 오른쪽으로 흐르는 애니메이션 */
-@keyframes rolling-right {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 /********** 이달의 메뉴 TOP3, 투표 배너 **********/
 .section1 {
-  margin-top: 200px;
+  margin-top: 100px;
   text-align: center;
 }
 h1 {
@@ -106,63 +97,68 @@ h1 {
   font-weight: 600;
   color: #fff;
   margin-bottom: 1%;
+  text-align: center;
 }
 p {
   font-weight: 400;
   font-size: 28px;
   color: #fff;
-  margin-bottom: 2%;
+  word-break: keep-all;
+  justify-self: center;
+  text-align: center;
 }
 .img_box {
   margin-top: 97px;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
   display: flex;
-  width: 100%;
+  justify-content: center;
   position: relative;
 }
-.arrow1 {
-  width: 5%;
-  position: absolute;
-  top: 81.5%;
-  left: 45%;
+.section_left,
+.section_right {
+  flex: 1;
+  border: 1px solid rgba(0, 0, 0, 0);
+  box-sizing: border-box;
 }
-.arrow2 {
-  width: 5%;
-  position: absolute;
-  top: 81.5%;
-  right: 0%;
-}
-.arrow1:hover {
-  filter: contrast(0.6);
-}
-.arrow2:hover {
-  filter: contrast(0.6);
+.section_left:hover,
+.section_right:hover {
+  border: 1px solid #ff0009;
+  box-sizing: border-box;
 }
 /********** X-FOOD 이벤트 **********/
 .section2 {
-  width: 100%;
-  margin-top: 350px;
+  margin-top: 30px;
+  text-align: center;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+}
+.section2 p {
+  word-break: keep-all;
+  justify-self: center;
   text-align: center;
 }
 .section2 img {
-  margin-top: 33px;
+  margin-top: 70px;
 }
 /********** 전광판 **********/
 .section3 {
-  margin-top: 333px;
-  margin-bottom: 175px;
+  text-align: center;
+  margin-top: 250px;
+}
+.section3 p {
+  word-break: keep-all;
   text-align: center;
 }
 /* 전광판 */
 .billboard {
-  position: relative;
-  width: 100%;
   margin-top: 2%;
+  position: relative;
 }
 .section3 .swiper-slide {
   position: relative;
 }
 .section3 .swiper-slide img {
-  width: 100%;
   display: block;
 }
 /* iframe을 전광판 안쪽 위치에 딱 맞게 */
@@ -181,21 +177,19 @@ p {
   height: 100%;
   display: block;
 }
-
-/* 미디어 쿼리 */
+/********** 미디어 쿼리 **********/
 @media (max-width: 1450px) {
-  .container {
-    width: 100%;
+  .txtRolling1 {
+    margin-top: -2%;
   }
   .section1 {
-    margin-top: 222px;
+    margin-top: 60px;
   }
   .section2 {
-    margin-top: 222px;
+    margin-top: 30px;
   }
-
   .section3 {
-    margin-top: 222px;
+    margin-top: 165px;
   }
   h1 {
     font-size: 40px;
@@ -210,57 +204,93 @@ p {
   }
   p {
     font-size: 18px;
-    margin-bottom: 4%;
   }
-
+  .rolling-list img {
+    content: url("../img/main/warning_line_2.png");
+  }
   .img_box {
     margin-top: 70px;
-  }
-  .section1 {
-    margin-top: 180px;
+    margin-left: 2.65%;
+    margin-right: 2.65%;
   }
   .section2 {
-    margin-top: 180px;
-  }
-
-  .section3 {
-    margin-top: 180px;
+    margin-left: 2.65%;
+    margin-right: 2.65%;
   }
 }
 @media (max-width: 768px) {
   .img_box {
     display: block;
-    margin-top: 40px;
+    margin-left: 5.2%;
+    margin-right: 5.2%;
   }
-  .arrow1 {
-    width: 10%;
-    position: absolute;
-    top: 40.5%;
-    left: 90%;
+  .section_left,
+  .section_right {
+    display: inline-block;
   }
-  .arrow2 {
-    width: 10%;
-    position: absolute;
-    top: 90.6%;
-    right: 0%;
+  .section2 {
+    margin-left: 5.2%;
+    margin-right: 5.2%;
+  }
+}
+@media (max-width: 600px) {
+  .rolling-list img {
+    content: url("../img/main/warning_line_3.png");
   }
 }
 @media (max-width: 480px) {
   h1 {
     font-size: 24px;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
   }
   p {
     font-size: 15px;
+    line-height: 1.2rem;
   }
-  .section1 {
-    margin-top: 120px;
+  .txtRolling1 {
+    margin-top: -3%;
+  }
+  .txtRolling2 {
+    margin-top: 15%;
+  }
+  .section1 p {
+    width: 280px;
+  }
+  .img_box {
+    margin-top: 35px;
+    margin-left: 4.16%;
+    margin-right: 4.16%;
   }
   .section2 {
-    margin-top: 120px;
+    margin-top: 10px;
+    margin-left: 4.16%;
+    margin-right: 4.16%;
   }
-
+  .section2 img {
+    margin-top: 35px;
+  }
   .section3 {
-    margin-top: 120px;
+    margin-top: 100px;
   }
+  /* .billboard {
+    margin-top: 25%;
+    scale: 170%;
+    left: -35px;
+    overflow: hidden;
+  } */
+}
+@media (max-width: 350px) {
+  .txtRolling1 {
+    margin-top: -4%;
+  }
+  .section2 p {
+    width: 230px;
+  }
+  .section3 {
+    margin-top: 80px;
+  }
+  /* .billboard {
+    left: -25px;
+    overflow: hidden;
+  } */
 }

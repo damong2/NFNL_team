@@ -506,16 +506,16 @@
 
         const iframes = document.querySelectorAll(".NaNa iframe");
 
-        iframes.forEach((iframe, index) => {
+        iframes.forEach((iframe) => {
           const player = new YT.Player(iframe, {
             events: {
               onStateChange: function (event) {
-                // 영상 재생 중이면 스와이퍼 멈춤
+                // 영상이 실제로 재생될 때만 멈춤
                 if (event.data === YT.PlayerState.PLAYING) {
                   swiper.autoplay.stop();
                 }
 
-                // 영상이 멈추거나 끝나면 다시 스와이퍼 시작
+                // 영상이 멈추거나 끝나면 다시 시작
                 if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
                   swiper.autoplay.start();
                 }
@@ -527,13 +527,17 @@
         });
 
         swiper.on("slideChange", function () {
+          // 슬라이드 바뀌면 모든 영상 정지
           players.forEach((player) => {
             if (player && player.pauseVideo) {
               player.pauseVideo();
             }
           });
 
-          swiper.autoplay.start();
+          // autoplay 재시작 (혹시 꼬인 경우 대비)
+          setTimeout(() => {
+            swiper.autoplay.start();
+          }, 50);
         });
       }
     </script>

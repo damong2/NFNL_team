@@ -108,6 +108,11 @@
   z-index: 9998;
 }
 @media (max-width: 940px) {
+  .cursor,
+  .ripple {
+    display: none;
+  }
+
   #topBtn {
     bottom: 3%;
     font-size: 34px;

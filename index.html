@@ -320,109 +320,64 @@
         <!-- Swiper -->
         <div class="swiper NaNa">
           <div class="swiper-wrapper">
+            <!-- 1 -->
             <div class="swiper-slide">
-              <iframe
-                width="1100"
-                height="600"
-                src="https://www.youtube.com/embed/esaF_fhcSiU?enablejsapi=1&mute=1&si=-VfRAenRCkbJfrHK"
-                title="YouTube video player"
-                frameborder="0"
-                allow="
-                  accelerometer;
-                  autoplay;
-                  clipboard-write;
-                  encrypted-media;
-                  gyroscope;
-                  picture-in-picture;
-                  web-share;
-                "
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
+              <div class="video-wrap">
+                <video class="slide-video" playsinline muted>
+                  <source src="assets/media/mala1.mp4" type="video/mp4" />
+                </video>
+
+                <button class="play-btn">▶</button>
+
+                <div class="time">
+                  <span class="current">0:00</span> /
+                  <span class="duration">0:00</span>
+                </div>
+
+                <div class="progress-bar">
+                  <div class="progress"></div>
+                </div>
+              </div>
             </div>
+
+            <!-- 2 -->
             <div class="swiper-slide">
-              <iframe
-                width="1100"
-                height="600"
-                src="https://www.youtube.com/embed/7-BpFy4N2Fk?enablejsapi=1&mute=1&si=duVkM7czm0DaLkeY"
-                title="YouTube video player"
-                frameborder="0"
-                allow="
-                  accelerometer;
-                  autoplay;
-                  clipboard-write;
-                  encrypted-media;
-                  gyroscope;
-                  picture-in-picture;
-                  web-share;
-                "
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
+              <div class="video-wrap">
+                <video class="slide-video" playsinline muted>
+                  <source src="assets/media/jokbal.mp4" type="video/mp4" />
+                </video>
+
+                <button class="play-btn">▶</button>
+
+                <div class="time">
+                  <span class="current">0:00</span> /
+                  <span class="duration">0:00</span>
+                </div>
+
+                <div class="progress-bar">
+                  <div class="progress"></div>
+                </div>
+              </div>
             </div>
+
+            <!-- 3 -->
             <div class="swiper-slide">
-              <iframe
-                width="1100"
-                height="600"
-                src="https://www.youtube.com/embed/R10_WLJ3Tms?enablejsapi=1&mute=1&si=VAtc0bvwRX3qFEkt"
-                title="YouTube video player"
-                frameborder="0"
-                allow="
-                  accelerometer;
-                  autoplay;
-                  clipboard-write;
-                  encrypted-media;
-                  gyroscope;
-                  picture-in-picture;
-                  web-share;
-                "
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="swiper-slide">
-              <iframe
-                width="1100"
-                height="600"
-                src="https://www.youtube.com/embed/qkp2YJmjoKk?enablejsapi=1&mute=1&si=5G6i9pWhotLOVp98"
-                title="YouTube video player"
-                frameborder="0"
-                allow="
-                  accelerometer;
-                  autoplay;
-                  clipboard-write;
-                  encrypted-media;
-                  gyroscope;
-                  picture-in-picture;
-                  web-share;
-                "
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              >
-                ></iframe
-              >
-            </div>
-            <div class="swiper-slide">
-              <iframe
-                width="1100"
-                height="600"
-                src="https://www.youtube.com/embed/JgtvxXP-lFc?enablejsapi=1&mute=1&si=iUCT-WC-_IlZPGYI"
-                title="YouTube video player"
-                frameborder="0"
-                allow="
-                  accelerometer;
-                  autoplay;
-                  clipboard-write;
-                  encrypted-media;
-                  gyroscope;
-                  picture-in-picture;
-                  web-share;
-                "
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              >
-                ></iframe
-              >
+              <div class="video-wrap">
+                <video class="slide-video" playsinline muted>
+                  <source src="assets/media/gogi.mp4" type="video/mp4" />
+                </video>
+
+                <button class="play-btn">▶</button>
+
+                <div class="time">
+                  <span class="current">0:00</span> /
+                  <span class="duration">0:00</span>
+                </div>
+
+                <div class="progress-bar">
+                  <div class="progress"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -515,11 +470,11 @@
 
     <script>
       let swiper;
-      let players = [];
 
-      function onYouTubeIframeAPIReady() {
+      document.addEventListener("DOMContentLoaded", () => {
+        const wraps = document.querySelectorAll(".video-wrap");
+
         swiper = new Swiper(".NaNa", {
-          loop: false,
           effect: "fade",
           speed: 800,
           autoplay: {
@@ -528,54 +483,68 @@
           },
         });
 
-        const iframes = document.querySelectorAll(".NaNa iframe");
+        wraps.forEach((wrap) => {
+          const video = wrap.querySelector("video");
+          const playBtn = wrap.querySelector(".play-btn");
+          const muteBtn = wrap.querySelector(".mute-btn");
+          const progress = wrap.querySelector(".progress");
+          const current = wrap.querySelector(".current");
+          const duration = wrap.querySelector(".duration");
 
-        iframes.forEach((iframe) => {
-          const player = new YT.Player(iframe, {
-            events: {
-              onStateChange: function (event) {
-                // 영상 or 광고가 재생/로딩되면 스와이퍼 멈춤
-                if (
-                  event.data === YT.PlayerState.PLAYING ||
-                  event.data === YT.PlayerState.BUFFERING
-                ) {
-                  swiper.autoplay.stop();
-                }
-
-                // 멈추거나 끝나면 다시 시작
-                if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-                  setTimeout(() => {
-                    swiper.autoplay.start();
-                  }, 50);
-                }
-              },
-            },
-          });
-
-          players.push(player);
-
-          // iframe에 마우스 올리거나 터치해도 일단 멈춤
-          iframe.addEventListener("mouseenter", () => {
-            swiper.autoplay.stop();
-          });
-
-          iframe.addEventListener("touchstart", () => {
-            swiper.autoplay.stop();
-          });
-        });
-
-        swiper.on("slideChange", function () {
-          players.forEach((player) => {
-            if (player && player.pauseVideo) {
-              player.pauseVideo();
+          // ▶ 재생/정지
+          playBtn.addEventListener("click", () => {
+            if (video.paused) {
+              video.play();
+              playBtn.textContent = "⏸";
+              swiper.autoplay.stop();
+            } else {
+              video.pause();
+              playBtn.textContent = "▶";
+              swiper.autoplay.start();
             }
           });
 
-          setTimeout(() => {
+          // ⏱ duration 세팅
+          video.addEventListener("loadedmetadata", () => {
+            duration.textContent = formatTime(video.duration);
+          });
+
+          // 📊 progress + time
+          video.addEventListener("timeupdate", () => {
+            const percent = (video.currentTime / video.duration) * 100;
+            progress.style.width = percent + "%";
+
+            current.textContent = formatTime(video.currentTime);
+          });
+
+          // ▶ 끝
+          video.addEventListener("ended", () => {
+            playBtn.textContent = "▶";
             swiper.autoplay.start();
-          }, 50);
+          });
         });
-      }
+
+        // 슬라이드 변경 초기화
+        swiper.on("slideChange", () => {
+          wraps.forEach((wrap) => {
+            const video = wrap.querySelector("video");
+            const playBtn = wrap.querySelector(".play-btn");
+            const progress = wrap.querySelector(".progress");
+
+            video.pause();
+            video.currentTime = 0;
+
+            playBtn.textContent = "▶";
+            progress.style.width = "0%";
+          });
+        });
+
+        function formatTime(sec) {
+          const m = Math.floor(sec / 60);
+          const s = Math.floor(sec % 60);
+          return `${m}:${s < 10 ? "0" : ""}${s}`;
+        }
+      });
     </script>
 
     <!-- cursor -->

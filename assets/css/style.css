@@ -328,10 +328,6 @@ em {
   }
 }
 @media (max-width: 480px) {
-  .cursor,
-  .ripple {
-    display: none;
-  }
   #header {
     height: 45px;
     width: 100%;

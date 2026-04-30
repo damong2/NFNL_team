@@ -7,6 +7,8 @@ body {
 }
 #title {
   width: 100%;
+  position: relative;
+  top: 80px;
 }
 #title img {
   width: 100%;
@@ -16,7 +18,7 @@ body {
 .store_name {
   display: flex;
   justify-content: space-between;
-  padding-top: 97px;
+  padding-top: 177px;
 }
 .name_left {
   width: 48%;
@@ -264,7 +266,7 @@ body {
     padding: 0 20px;
   }
 }
-@media (max-width: 940px) {
+@media (max-width: 960px) {
   #store > .container {
     padding: 0 30px;
     box-sizing: border-box;
@@ -281,7 +283,7 @@ body {
   }
   .name_right {
     width: 100%;
-    margin-bottom: 42px;
+    margin-bottom: 52px;
   }
   .textBox > h1 {
     font-size: 18px;
@@ -330,6 +332,9 @@ body {
   }
 }
 @media (max-width: 768px) {
+  #title {
+    top: 60px;
+  }
   #store > .container {
     padding: 0 24px;
     box-sizing: border-box;
@@ -337,7 +342,7 @@ body {
   .store_name {
     display: flex;
     flex-direction: column;
-    padding-top: 50px;
+    padding-top: 110px;
   }
   .name_left {
     width: 100%;
@@ -352,7 +357,7 @@ body {
   }
   .name_right {
     width: 100%;
-    margin-bottom: 42px;
+    margin-top: 32px;
   }
 
   /* 스와이퍼 */
@@ -377,8 +382,14 @@ body {
   }
 }
 @media (max-width: 480px) {
+  #title {
+    top: 45px;
+  }
   .store_name {
-    padding-top: 30px;
+    padding-top: 75px;
+  }
+  .name_left h1 span img {
+    margin-bottom: 5px;
   }
   .name_left span {
     width: 10%;
@@ -390,12 +401,10 @@ body {
     font-size: 24px;
     padding-bottom: 5px;
   }
-
   .name_left ul li {
     padding-top: 5px;
     font-size: 16px;
   }
-
   .name_left ul li span {
     margin-top: 10px;
     padding-right: 5px;
@@ -407,7 +416,12 @@ body {
     font-weight: 500;
     color: #000;
     border-bottom: 3px solid #8d0002;
-    padding-bottom: 1px;
+    padding-bottom: 5px;
+  }
+  .storeText > h1 {
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
   }
   .menu_title p {
     font-size: 12px;
@@ -443,9 +457,6 @@ body {
   }
 }
 @media (max-width: 340px) {
-  .store_name {
-    padding-top: 30px;
-  }
   .name_left span {
     width: 13%;
     display: inline-block;
@@ -456,15 +467,18 @@ body {
     font-size: 24px;
     padding-bottom: 10px;
   }
+  .name_left h1 span img {
+    margin-bottom: -5px;
+  }
 
   .name_left ul li {
     padding-top: 5px;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .name_left ul li span {
     margin-top: 10px;
-    padding-right: 5px;
+    padding-right: 15px;
     width: 9%;
   }
   /* 메뉴 타이틀 */

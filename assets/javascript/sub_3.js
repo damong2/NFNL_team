@@ -69,18 +69,141 @@ window.addEventListener("hashchange", activeTabFromHash);
 
 // 게시판 버튼
 const boardBtn = document.querySelectorAll(".board_tabs ul li");
+const boardList = document.querySelector(".board_list");
 
-boardBtn.forEach((menu, index) => {
+const boardData = {
+  all: [
+    ["../icons/bell.png", "[공지]", "무단 데이터 크롤링 및 AI 학습 활용 금지 안내", "운영자"],
+    ["../icons/bell.png", "[공지]", "NFNL에 등록하기 위한 방법 안내", "운영자"],
+    ["../icons/bell.png", "[공지]", "이벤트 관련하여 상세한 안내", "운영자"],
+    ["../icons/suggestion2.png", "[추천맛집]", "이자카야 나무 인상적이어서 추천합니다", "술래동화"],
+    ["../icons/question2.png", "[질문]", "NFNL 등록 문의드립니다", "자영업"],
+    ["../icons/recipe2.png", "[레시피]", "완전 꿀맛 불고기 레시피 공유해요", "요리왕"],
+    ["../icons/region2.png", "[지역]", "부산에서 꼭 먹어야 할 음식 알려주세요", "여행러"],
+  ],
+
+  review: [
+    ["../icons/review.png", "[후기]", "우대갈비 직접 다녀온 후기입니다", "갈비킬러"],
+    ["../icons/review.png", "[후기]", "웨이팅 있었지만 만족스러웠어요", "맛집킬러"],
+    ["../icons/review.png", "[후기]", "분위기 좋은 이자카야 후기 남깁니다", "술래동화"],
+    ["../icons/review2.png", "[후기]", "우대갈비 직접 다녀온 후기입니다", "갈비킬러"],
+    ["../icons/review2.png", "[후기]", "웨이팅 있었지만 만족스러웠어요", "맛집킬러"],
+    ["../icons/review2.png", "[후기]", "분위기 좋은 이자카야 후기 남깁니다", "술래동화"],
+    ["../icons/review2.png", "[후기]", "우대갈비 직접 다녀온 후기입니다", "갈비킬러"],
+  ],
+
+  recipe: [
+    ["../icons/recipe.png", "[레시피]", "완전 꿀맛 불고기 레시피 공유해요", "요리왕"],
+    ["../icons/recipe.png", "[레시피]", "집에서 만드는 매콤 파스타 레시피", "주부9단"],
+    ["../icons/recipe.png", "[레시피]", "초간단 김치볶음밥 비법", "한식러"],
+    ["../icons/recipe2.png", "[레시피]", "완전 꿀맛 불고기 레시피 공유해요", "요리왕"],
+    ["../icons/recipe2.png", "[레시피]", "집에서 만드는 매콤 파스타 레시피", "주부9단"],
+    ["../icons/recipe2.png", "[레시피]", "초간단 김치볶음밥 비법", "한식러"],
+    ["../icons/recipe2.png", "[레시피]", "완전 꿀맛 불고기 레시피 공유해요", "요리왕"],
+  ],
+
+  recommend: [
+    ["../icons/suggestion.png", "[추천맛집]", "이자카야 나무 인상적이어서 추천합니다", "술래동화"],
+    ["../icons/suggestion.png", "[추천맛집]", "홍대 라멘집 추천합니다", "면러버"],
+    ["../icons/suggestion.png", "[추천맛집]", "성수동 디저트 맛집 발견", "슈가왕"],
+    ["../icons/suggestion2.png", "[추천맛집]", "이자카야 나무 인상적이어서 추천합니다", "술래동화"],
+    ["../icons/suggestion2.png", "[추천맛집]", "홍대 라멘집 추천합니다", "면러버"],
+    ["../icons/suggestion2.png", "[추천맛집]", "성수동 디저트 맛집 발견", "슈가왕"],
+    ["../icons/suggestion2.png", "[추천맛집]", "이자카야 나무 인상적이어서 추천합니다", "술래동화"],
+  ],
+
+  region: [
+    ["../icons/region.png", "[지역]", "부산에서 꼭 먹어야 할 음식 알려주세요", "여행러"],
+    ["../icons/region.png", "[지역]", "제주도 숨은 맛집 추천받아요", "돌할방"],
+    ["../icons/region.png", "[지역]", "서울 강동구 맛집 공유합니다", "강동주민"],
+    ["../icons/region2.png", "[지역]", "부산에서 꼭 먹어야 할 음식 알려주세요", "여행러"],
+    ["../icons/region2.png", "[지역]", "제주도 숨은 맛집 추천받아요", "돌할방"],
+    ["../icons/region2.png", "[지역]", "서울 강동구 맛집 공유합니다", "강동주민"],
+    ["../icons/region2.png", "[지역]", "부산에서 꼭 먹어야 할 음식 알려주세요", "여행러"],
+  ],
+
+  question: [
+    ["../icons/question.png", "[질문]", "NFNL 등록 문의드립니다", "자영업"],
+    ["../icons/question.png", "[질문]", "맛집 제보는 어디서 하나요?", "궁금이"],
+    ["../icons/question.png", "[질문]", "이벤트 참여 방법 알려주세요", "참여자"],
+    ["../icons/question2.png", "[질문]", "NFNL 등록 문의드립니다", "자영업"],
+    ["../icons/question2.png", "[질문]", "맛집 제보는 어디서 하나요?", "궁금이"],
+    ["../icons/question2.png", "[질문]", "이벤트 참여 방법 알려주세요", "참여자"],
+    ["../icons/question2.png", "[질문]", "NFNL 등록 문의드립니다", "자영업"],
+  ],
+};
+
+function renderBoard(type) {
+  const list = boardData[type];
+
+  boardList.innerHTML = list
+    .map((item, index) => {
+      const whiteClass = index >= 3 ? "card_main_white" : "";
+
+      return `
+        <div class="board_card">
+          <div class="card_inner">
+            <span class="card_title">
+              <img src="${item[0]}" alt="${item[1]} 아이콘" />
+              <div class="card_main ${whiteClass}">
+                <h3>${item[1]}</h3>
+                <h3 class="card_text">${item[2]}</h3>
+              </div>
+            </span>
+            <span class="card_meta">
+              <p>${item[3]} &#124; 2026.04.12 &#124; 조회수 1234</p>
+            </span>
+          </div>
+        </div>
+      `;
+    })
+    .join("");
+
+  requestAnimationFrame(() => {
+    const cards = document.querySelectorAll(".board_card");
+
+    // 탭 눌렀을 때는 일단 모여있는 상태로 초기화
+    cards.forEach((card) => {
+      card.classList.remove("spread");
+    });
+
+    // 사용자가 스크롤/마우스휠 했을 때 펼치기
+    const spreadCards = () => {
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add("spread");
+        }, index * 140);
+      });
+
+      window.removeEventListener("wheel", spreadCards);
+      window.removeEventListener("touchmove", spreadCards);
+      window.removeEventListener("scroll", spreadCards);
+    };
+
+    window.addEventListener("wheel", spreadCards, { once: true });
+    window.addEventListener("touchmove", spreadCards, { once: true });
+    window.addEventListener("scroll", spreadCards, { once: true });
+  });
+}
+
+boardBtn.forEach((menu) => {
   menu.addEventListener("click", (e) => {
     e.preventDefault();
 
     boardBtn.forEach((item) => {
       item.classList.remove("active");
     });
+
     menu.classList.add("active");
+
+    const boardType = menu.dataset.board;
+    renderBoard(boardType);
   });
 });
 
+renderBoard("all");
+
+// 게시판 페이지 버튼
 const pBtn = document.querySelectorAll(".page_btn ul li");
 
 pBtn.forEach((menu, index) => {

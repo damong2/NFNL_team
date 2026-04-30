@@ -164,6 +164,9 @@ input[type="radio"]:checked + label::before {
   border-radius: 50px;
   background: linear-gradient(90deg, #da282b 0%, #bc2022 59%, #8d0002 100%);
   position: relative;
+
+  opacity: 1;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .board_card + .board_card {
@@ -172,24 +175,35 @@ input[type="radio"]:checked + label::before {
 
 .board_card:nth-child(1) {
   z-index: 1;
+  transform: translateY(0);
 }
 .board_card:nth-child(2) {
   z-index: 2;
+  transform: translateY(-90px);
 }
 .board_card:nth-child(3) {
   z-index: 3;
+  transform: translateY(-180px);
 }
 .board_card:nth-child(4) {
   z-index: 4;
+  transform: translateY(-270px);
 }
 .board_card:nth-child(5) {
   z-index: 5;
+  transform: translateY(-360px);
 }
 .board_card:nth-child(6) {
   z-index: 6;
+  transform: translateY(-450px);
 }
 .board_card:nth-child(7) {
   z-index: 7;
+  transform: translateY(-540px);
+}
+.board_card.spread {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card_inner {
@@ -403,7 +417,7 @@ input[type="radio"]:checked + label::before {
 }
 
 .top_contents_box ul li {
-  padding: 42px 0;
+  padding: 110px 0;
   border-bottom: 2px solid #fff;
   position: relative;
 }
@@ -426,7 +440,7 @@ input[type="radio"]:checked + label::before {
 }
 
 .top_contents_box ul li span .top_right_text .sub_text {
-  margin: 17px 0;
+  margin: 26px 0;
 }
 
 .top_right_text .sub_text {
@@ -569,7 +583,7 @@ input[type="radio"]:checked + label::before {
     position: relative;
   }
   .top_contents_box ul li {
-    padding: 36px 0;
+    padding: 103px 0;
     border-bottom: none;
   }
   .top_right_text .sub_title {
@@ -662,7 +676,10 @@ input[type="radio"]:checked + label::before {
 @media (max-width: 960px) {
   /* 탭 상단 부분 크기 조절 */
   .tab_content {
-    margin-top: 80px;
+    margin-top: 160px;
+  }
+  .top_contents_box ul li {
+    padding: 50px 0;
   }
 
   /* 탭 하단 부분 크기 조절 */
@@ -761,6 +778,9 @@ input[type="radio"]:checked + label::before {
   .top_right_img img {
     margin-left: 45px;
   }
+  .top_contents_box ul li span .top_right_text .sub_text {
+    margin: 20px 0;
+  }
   .top_contents_box ul::before,
   .top_contents_box ul li::after {
     width: 85%;
@@ -786,7 +806,7 @@ input[type="radio"]:checked + label::before {
 @media (max-width: 788px) {
   /* 탭 상단 부분 크기 조절 */
   .tab_content {
-    margin-top: 68px;
+    margin-top: 150px;
   }
 
   /* 탭 하단 부분 크기 조절 */
@@ -858,6 +878,37 @@ input[type="radio"]:checked + label::before {
   }
   .card_text {
     margin-top: 3px;
+  }
+  .board_card:nth-child(1) {
+    transform: translateY(0);
+  }
+
+  .board_card:nth-child(2) {
+    transform: translateY(-50px);
+  }
+
+  .board_card:nth-child(3) {
+    transform: translateY(-100px);
+  }
+
+  .board_card:nth-child(4) {
+    transform: translateY(-150px);
+  }
+
+  .board_card:nth-child(5) {
+    transform: translateY(-200px);
+  }
+
+  .board_card:nth-child(6) {
+    transform: translateY(-250px);
+  }
+
+  .board_card:nth-child(7) {
+    transform: translateY(-300px);
+  }
+
+  .board_card.spread {
+    transform: translateY(0);
   }
   .board_card:nth-child(7),
   .board_card:nth-child(7) .card_inner,
@@ -949,6 +1000,9 @@ input[type="radio"]:checked + label::before {
 @media (max-width: 620px) {
   /* 리뷰영상 영역 */
   /* 리뷰영상 탑 */
+  .top_contents_box ul li {
+    padding: 40px 0;
+  }
   .top_contents_box ul::before,
   .top_contents_box ul li::after {
     width: 120%;
@@ -979,6 +1033,10 @@ input[type="radio"]:checked + label::before {
   }
   .card_title {
     margin-bottom: 21px;
+  }
+  .board_card {
+    transform: translateY(0) !important;
+    transition: none !important;
   }
   .board_card:nth-child(7) .card_inner {
     height: 92px;
@@ -1104,6 +1162,52 @@ input[type="radio"]:checked + label::before {
 @media (max-width: 420px) {
   .con2 .image img {
     height: 160px;
+  }
+}
+
+@media (max-width: 405px) {
+  /* 게시판 영역 */
+  .card_main h3 {
+    font-size: 13px;
+  }
+  .card_meta {
+    font-size: 11px;
+  }
+  .board_tabs ul {
+    gap: 6px;
+  }
+  .board_tabs ul li a {
+    padding: clamp(4px, 1.5vw, 4px) clamp(6px, 1.5vw, 9px);
+    font-size: 12px;
+  }
+
+  /* 게시판 페이지 버튼 */
+  .page_btn ul {
+    gap: 9px;
+  }
+  .page_btn ul li {
+    width: 22px;
+    height: 33px;
+  }
+}
+
+@media (max-width: 385px) {
+  .card_title img {
+    width: 27px;
+    height: 27px;
+  }
+  .card_main::before {
+    left: 64px;
+    top: 22px;
+  }
+  .card_main h3 {
+    margin-left: 20px;
+  }
+  .card_main h3 {
+    font-size: 12px;
+  }
+  .card_meta {
+    font-size: 10px;
   }
 }
 

@@ -37,29 +37,32 @@ function changeTab() {
   con1Full.style.display = tab01.checked ? "block" : "none";
   con2Full.style.display = tab02.checked ? "block" : "none";
   con3Full.style.display = tab03.checked ? "block" : "none";
-}
 
-[tab01, tab02, tab03].forEach((tab) => {
-  tab.addEventListener("change", changeTab);
-});
-
-changeTab();
-
-// 네비 스크롤 눌렀을 때도 탭 변경
-function activeTabFromHash() {
-  const hash = window.location.hash;
-
-  if (hash) {
-    const targetTab = document.querySelector(hash);
-
-    if (targetTab && targetTab.type === "radio") {
-      targetTab.checked = true;
-    }
+  if (tab03.checked && typeof initSwiper === "function") {
+    setTimeout(initSwiper, 300);
   }
 }
 
-activeTabFromHash();
+function activeTabFromHash() {
+  const hash = window.location.hash;
 
+  if (hash === "#tab01") tab01.checked = true;
+  if (hash === "#tab02") tab02.checked = true;
+  if (hash === "#tab03") tab03.checked = true;
+
+  changeTab();
+}
+
+[tab01, tab02, tab03].forEach((tab) => {
+  tab.addEventListener("change", () => {
+    changeTab();
+
+    // 탭 직접 클릭했을 때 주소도 바뀌게
+    history.replaceState(null, null, "#" + tab.id);
+  });
+});
+
+activeTabFromHash();
 window.addEventListener("hashchange", activeTabFromHash);
 
 // SUB3 - 게시판 / 영상리뷰

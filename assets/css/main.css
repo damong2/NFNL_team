@@ -130,17 +130,99 @@ p {
 .section2 {
   margin-top: 30px;
   text-align: center;
-  margin-left: 12.5%;
-  margin-right: 12.5%;
 }
 .section2 p {
   word-break: keep-all;
   justify-self: center;
   text-align: center;
 }
-.section2 img {
-  margin-top: 70px;
+.text_mo {
+  display: none;
 }
+
+/* X-FOOD 레드핑 */
+.section2 .mission_img_wrap {
+  position: relative;
+  width: 100%;
+  margin-top: 97px;
+}
+
+.section2 .mission_img_wrap img {
+  display: block;
+  width: 100%;
+}
+
+.section2 .ripple_box {
+  position: absolute;
+  top: 19%;
+  left: 67%;
+  width: clamp(24px, 4.6vw, 46px);
+  height: clamp(24px, 4.6vw, 46px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.section2 .wave {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 39%;
+  height: 39%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 35, 50, 0.95) 0%,
+    rgba(255, 35, 50, 0.65) 35%,
+    rgba(255, 35, 50, 0.25) 65%,
+    rgba(255, 35, 50, 0) 100%
+  );
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  filter: blur(0.6px);
+  animation: ripple-soft 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.section2 .core {
+  width: 26%;
+  height: 26%;
+  animation-duration: 1.2s;
+  animation-delay: 0s;
+  opacity: 0.9;
+}
+
+.section2 .w1 {
+  animation-delay: 0.15s;
+}
+
+.section2 .w2 {
+  animation-delay: 0.45s;
+}
+
+.section2 .w3 {
+  animation-delay: 0.75s;
+}
+
+.section2 .w4 {
+  animation-delay: 1.05s;
+}
+
+@keyframes ripple-soft {
+  0% {
+    transform: translate(-50%, -50%) scale(0.15);
+    opacity: 0.95;
+  }
+
+  55% {
+    opacity: 0.42;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(5.8);
+    opacity: 0;
+  }
+}
+
 /********** 전광판 **********/
 .section3 {
   text-align: center;
@@ -179,9 +261,6 @@ p {
 }
 /********** 미디어 쿼리 **********/
 @media (max-width: 1450px) {
-  #main {
-    margin-bottom: 15px;
-  }
   .txtRolling1 {
     margin-top: -2%;
   }
@@ -201,13 +280,6 @@ p {
     font-size: 24px;
   }
 }
-
-@media (max-width: 1049px) {
-  #main {
-    margin-top: 20px;
-  }
-}
-
 @media (max-width: 960px) {
   h1 {
     font-size: 30px;
@@ -223,9 +295,8 @@ p {
     margin-left: 2.65%;
     margin-right: 2.65%;
   }
-  .section2 {
-    margin-left: 2.65%;
-    margin-right: 2.65%;
+  .section2 .mission_img_wrap {
+    margin-top: 70px;
   }
 }
 @media (max-width: 768px) {
@@ -238,9 +309,24 @@ p {
   .section_right {
     display: inline-block;
   }
+
+  /* X-FOOD 영역 */
   .section2 {
-    margin-left: 5.2%;
-    margin-right: 5.2%;
+    margin-left: 3.2%;
+    margin-right: 3.2%;
+  }
+  .text_pc {
+    display: none;
+  }
+  .text_mo {
+    display: block;
+  }
+  .mission_img {
+    content: url("../img/main/xfood_768.png");
+  }
+  .section2 .ripple_box {
+    top: 32%;
+    left: 51%;
   }
 }
 @media (max-width: 600px) {
@@ -271,14 +357,30 @@ p {
     margin-left: 4.16%;
     margin-right: 4.16%;
   }
+
+  /* X-FOOD 영역 */
   .section2 {
     margin-top: 10px;
-    margin-left: 4.16%;
-    margin-right: 4.16%;
+    /* margin-left: 4.16%;
+        margin-right: 4.16%; */
+  }
+  .section2 .mission_img_wrap {
+    margin-top: 35px;
+    width: 106%;
+    justify-self: center;
   }
   .section2 img {
     margin-top: 35px;
   }
+  .mission_img {
+    content: url("../img/main/xfood_480.png");
+  }
+  .section2 .ripple_box {
+    top: 26%;
+    left: 44%;
+  }
+
+  /* 전광판 영역 */
   .section3 {
     margin-top: 100px;
   }

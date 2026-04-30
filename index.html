@@ -65,9 +65,9 @@
             </div>
             <ul class="submenu">
               <li><a href="assets/html/subpage_03.html">게시판</a></li>
-              <li><a href="assets/html/subpage_03.html">X파일</a></li>
+              <li><a href="assets/html/subpage_03.html#tab02">X파일</a></li>
               <li>
-                <a href="assets/html/subpage_03.html">유튜버 인증 리뷰</a>
+                <a href="assets/html/subpage_03.html#tab03">유튜버 인증 리뷰</a>
               </li>
             </ul>
           </li>
@@ -108,8 +108,8 @@
           <li>
             <a href="assets/html/subpage_03.html" class="hover-target">커뮤니티</a>
             <ul class="submenu2">
-              <li><a href="assets/html/subpage_03.html" class="hover-target">게시판</a></li>
-              <li><a href="assets/html/subpage_03.html" class="hover-target">X파일</a></li>
+              <li><a href="assets/html/subpage_03.html#tab02" class="hover-target">게시판</a></li>
+              <li><a href="assets/html/subpage_03.html#tab03" class="hover-target">X파일</a></li>
               <li>
                 <a href="assets/html/subpage_03.html" class="hover-target">유튜버 인증 리뷰</a>
               </li>
@@ -289,8 +289,25 @@
     <!-- X-FOOD 이벤트 -->
     <div class="section2">
       <h1>X-FOOD</h1>
-      <p><strong>주차별 미션</strong>을 확인하고 맛있는 <strong>보상</strong>을 수령하세요!</p>
-      <img src="assets/img/main/xfood.png" alt="x-food" />
+      <p class="text_pc">
+        <strong>주차별 미션</strong>을 확인하고 맛있는 <strong>보상</strong>을 수령하세요!
+      </p>
+
+      <p class="text_mo">
+        <strong>이번 주 미션</strong>을 확인하고 맛있는 <strong>보상</strong>을 수령하세요!
+      </p>
+
+      <div class="mission_img_wrap">
+        <img src="assets/img/main/xfood.gif" alt="x-food" class="mission_img" />
+
+        <div class="ripple_box">
+          <span class="wave core"></span>
+          <span class="wave w1"></span>
+          <span class="wave w2"></span>
+          <span class="wave w3"></span>
+          <span class="wave w4"></span>
+        </div>
+      </div>
     </div>
     <!-- //X-FOOD 이벤트 -->
 
@@ -510,31 +527,43 @@
           const player = new YT.Player(iframe, {
             events: {
               onStateChange: function (event) {
-                // 영상이 실제로 재생될 때만 멈춤
-                if (event.data === YT.PlayerState.PLAYING) {
+                // 영상 or 광고가 재생/로딩되면 스와이퍼 멈춤
+                if (
+                  event.data === YT.PlayerState.PLAYING ||
+                  event.data === YT.PlayerState.BUFFERING
+                ) {
                   swiper.autoplay.stop();
                 }
 
-                // 영상이 멈추거나 끝나면 다시 시작
+                // 멈추거나 끝나면 다시 시작
                 if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-                  swiper.autoplay.start();
+                  setTimeout(() => {
+                    swiper.autoplay.start();
+                  }, 50);
                 }
               },
             },
           });
 
           players.push(player);
+
+          // iframe에 마우스 올리거나 터치해도 일단 멈춤
+          iframe.addEventListener("mouseenter", () => {
+            swiper.autoplay.stop();
+          });
+
+          iframe.addEventListener("touchstart", () => {
+            swiper.autoplay.stop();
+          });
         });
 
         swiper.on("slideChange", function () {
-          // 슬라이드 바뀌면 모든 영상 정지
           players.forEach((player) => {
             if (player && player.pauseVideo) {
               player.pauseVideo();
             }
           });
 
-          // autoplay 재시작 (혹시 꼬인 경우 대비)
           setTimeout(() => {
             swiper.autoplay.start();
           }, 50);

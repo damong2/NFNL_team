@@ -87,12 +87,11 @@ input[type="radio"]:checked + label::before {
 .con1_full,
 .con2_full,
 .con3_full {
-  /* display: none; */
-  display: block; /*아무것도 안보여서 임의로 해뒀습니다*/
+  display: none;
+  /* display: block; 아무것도 안보여서 임의로 해뒀습니다 */
 }
 .con1_full {
-  background: #101010 url("../img/sub_3/tab03/board_line.png") center center /
-    1920px auto no-repeat;
+  background: #101010 url("../img/sub_3/tab03/board_line.png") center center / 1920px auto no-repeat;
   margin-top: 200px; /*탭이랑 컨테이너 사이 간격 @@@@@ 조정해야함*/
 }
 .con2_full,

@@ -90,8 +90,30 @@
       0 0 60px rgba(255, 0, 0, 0.2);
   }
 }
-
 /* //cursor */
+
+/* 버튼 스타일 */
+#topBtn h3 {
+  font-size: 14px;
+  padding-top: 8%;
+}
+#topBtn {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  display: none;
+  font-size: 40px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 9998;
+}
+@media (max-width: 940px) {
+  #topBtn {
+    bottom: 3%;
+    font-size: 34px;
+  }
+}
+/* //버튼 스타일 */
 
 /* 여백 초기화 */
 body,

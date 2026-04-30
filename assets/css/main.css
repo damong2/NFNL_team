@@ -1,6 +1,7 @@
 /********** main vedio **********/
 #main {
   width: 100%;
+  margin-top: -10px;
   position: relative;
   z-index: -1000;
 }
@@ -261,6 +262,9 @@ p {
 }
 /********** 미디어 쿼리 **********/
 @media (max-width: 1450px) {
+  #main {
+    margin-bottom: 15px;
+  }
   .txtRolling1 {
     margin-top: -2%;
   }
@@ -278,6 +282,11 @@ p {
   }
   p {
     font-size: 24px;
+  }
+}
+@media (max-width: 1200px) {
+  #main {
+    margin-top: 3%;
   }
 }
 @media (max-width: 960px) {
@@ -330,6 +339,9 @@ p {
   }
 }
 @media (max-width: 600px) {
+  #main {
+    margin-top: 25px;
+  }
   .rolling-list img {
     content: url("../img/main/warning_line_3.png");
   }
@@ -391,6 +403,12 @@ p {
     overflow: hidden;
   } */
 }
+@media (max-width: 360px) {
+  #main {
+    margin-top: 7%;
+  }
+}
+
 @media (max-width: 350px) {
   .txtRolling1 {
     margin-top: -4%;
@@ -405,4 +423,10 @@ p {
     left: -25px;
     overflow: hidden;
   } */
+}
+
+@media (max-width: 330px) {
+  #main {
+    margin-top: 25px;
+  }
 }

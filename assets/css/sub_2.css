@@ -1,7 +1,7 @@
 /* BG : white_color */
 /* body BG, header BG */
 .white_color {
-  background: #fff;
+  /* background: #fff; */
 }
 /* font color : #101010 */
 .dark_color {
@@ -385,7 +385,7 @@
 }
 @media (max-width: 960px) {
   #header {
-    height: 60px;
+    /* height: 60px; */
   }
   .main_sub_2 {
     transform: translateY(90px);

@@ -179,6 +179,9 @@ p {
 }
 /********** 미디어 쿼리 **********/
 @media (max-width: 1450px) {
+  #main {
+    margin-bottom: 15px;
+  }
   .txtRolling1 {
     margin-top: -2%;
   }
@@ -198,6 +201,13 @@ p {
     font-size: 24px;
   }
 }
+
+@media (max-width: 1049px) {
+  #main {
+    margin-top: 20px;
+  }
+}
+
 @media (max-width: 960px) {
   h1 {
     font-size: 30px;

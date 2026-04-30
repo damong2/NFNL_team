@@ -773,6 +773,9 @@ body {
   }
 }
 @media (max-width: 640px) {
+  .txt_box {
+    padding-right: 15px;
+  }
   .color_inner .item {
     column-gap: 20px;
     font-size: 16px;
@@ -808,11 +811,6 @@ body {
 }
 
 @media (max-width: 545px) {
-  #main h2,
-  #main h5,
-  #main p {
-    padding-left: 30px;
-  }
   .identity img {
     padding: 15px 10px 0 15px;
   }
@@ -919,6 +917,9 @@ body {
 }
 
 @media (max-width: 360px) {
+  #main h5 {
+    word-break: keep-all;
+  }
   .color_inner {
     padding-bottom: 50px;
   }

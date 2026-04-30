@@ -4,6 +4,8 @@ window.addEventListener("scroll", function () {
   let scrollTop = window.scrollY + window.innerHeight / 2;
   let scrollTop2 = window.scrollY;
 
+  if (window.innerWidth <= 768) return;
+
   if (scrollTop2 > lastScrollTop) {
     document.querySelector("#header").classList.add("hide");
   } else {

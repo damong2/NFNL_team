@@ -413,12 +413,12 @@ input[type="radio"]:checked + label::before {
 
 .top_contents_box ul {
   display: block;
-  border-top: 2px solid #fff;
+  border-top: 1px solid #676767;
 }
 
 .top_contents_box ul li {
   padding: 110px 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 1px solid #676767;
   position: relative;
 }
 

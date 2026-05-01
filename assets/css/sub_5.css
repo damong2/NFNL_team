@@ -400,6 +400,8 @@ body {
   .name_left > h1 {
     font-size: 24px;
     padding-bottom: 5px;
+    align-items: center;
+    border-bottom: 2px solid #8d0002;
   }
   .name_left ul li {
     padding-top: 5px;
@@ -407,7 +409,7 @@ body {
   }
   .name_left ul li span {
     margin-top: 10px;
-    padding-right: 5px;
+    padding-right: 15px;
     width: 6%;
   }
   /* 메뉴 타이틀 */
@@ -415,8 +417,8 @@ body {
     font-size: 20px;
     font-weight: 500;
     color: #000;
-    border-bottom: 3px solid #8d0002;
-    padding-bottom: 5px;
+    border-bottom: 2px solid #8d0002;
+    padding-bottom: 10px;
   }
   .storeText > h1 {
     color: #000;
@@ -446,6 +448,13 @@ body {
   .storeBox img {
     margin-bottom: 10px;
     cursor: pointer;
+  }
+  .textBox > h1 {
+    font-size: 16px;
+  }
+
+  .reviewCard {
+    padding: 15% 12%;
   }
 }
 @media (max-width: 400px) {

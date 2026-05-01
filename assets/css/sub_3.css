@@ -600,7 +600,7 @@ input[type="radio"]:checked + label::before {
     transform: translateX(-50%);
     width: 93%;
     height: 2px;
-    background: #fff;
+    background: #676767;
   }
   .top_contents_box ul li::after {
     content: "";
@@ -610,7 +610,7 @@ input[type="radio"]:checked + label::before {
     transform: translateX(-50%);
     width: 93%;
     height: 2px;
-    background: #fff;
+    background: #676767;
   }
 
   /* 영상리뷰 바텀 */
@@ -952,7 +952,9 @@ input[type="radio"]:checked + label::before {
   }
 
   .top_title .title {
+    margin-top: 40px;
     margin-left: 0;
+    font-size: 35px;
     text-align: center;
   }
   .top_title .text {
@@ -1116,6 +1118,7 @@ input[type="radio"]:checked + label::before {
   /* 리뷰영상 영역 */
   /* 리뷰영상 탑 */
   .top_title .title {
+    margin-top: 25px;
     font-size: 24px;
   }
   .top_title .text {

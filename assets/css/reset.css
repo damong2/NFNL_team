@@ -1,8 +1,5 @@
 @charset "utf-8";
-@charset "utf-8";
-* {
-  cursor: none !important;
-}
+
 /* cursor */
 .cursor {
   position: fixed;
@@ -107,12 +104,24 @@
   background-color: rgba(0, 0, 0, 0);
   z-index: 9998;
 }
-@media (max-width: 940px) {
-  .cursor,
-  .ripple {
+
+/* PC에서만 커스텀 커서 사용 */
+@media (min-width: 961px) {
+  * {
+    cursor: none !important;
+  }
+}
+/* 960px 이하에서는 기본 커서 + 커서 이미지 숨김 */
+@media (max-width: 960px) {
+  * {
+    cursor: auto !important;
+  }
+  .cursor {
     display: none;
   }
+}
 
+@media (max-width: 940px) {
   #topBtn {
     bottom: 3%;
     font-size: 34px;
